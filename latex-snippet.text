@@ -12,22 +12,28 @@ Un documento "vuoto"
 \usepackage[italian]{babel} \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage{microtype} \usepackage[hidelinks]{hyperref}
-\usepackage{booktabs} \usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
 
-\usepackage{amsmath} \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-\author{Pinco Pallino \and Paolino Paperino} \title{Una relazione
-qualsiasi.} \date{\today}
+\author{Pinco Pallino \and Paolino Paperino}
+\title{Una relazione qualsiasi.}
+\date{\today}
 
-\begin{document} \maketitle \begin{abstract} % Abstract.
-\end{abstract} 
+\begin{document}
+\maketitle
+\begin{abstract} % Abstract.
+\end{abstract}
 %\tableofcontents \listoffigures \listoftables %
 % questa riga finirà commentata prima di subito, se vuoi usare
 % l'abstract descrivendo il lavoro. % commentata per intero o anche a
 % pezzi. eventualmente, figures e tables si spostano in coda.
 
-\end{document} 
+\end{document}
 
 ```
 
@@ -36,19 +42,21 @@ Parti
 
 ### Un'immagine.
 
-```{.latex} 
-\begin{figure}[htpb] \centering
-\includegraphics[width=0.9\textwidth]{filename} \caption{
-\label{fig:}} \end{figure} 
+```{.latex}
+\begin{figure}[htpb]
+\centering\includegraphics[width=0.9\textwidth]{filename} \caption{
+\label{fig:}}
+\end{figure}
 
 ```
 
 ### Un'immagine ruotata sul lato lungo della pagina.
 
-```{.latex} 
+```{.latex}
 \begin{sidewaysfigure}[p] % needs &quot;rotating&quot;
-\centering \includegraphics[height=0.9\textheight]{filename}
-\caption{ \label{fig:}} \end{sidewaysfigure} 
+\centering\includegraphics[height=0.9\textheight]{filename}
+\caption{ \label{fig:}}
+\end{sidewaysfigure}
 
 ```
 
@@ -64,14 +72,14 @@ sostituisci.
 ```{.php}
 #! /usr/bin/php
 
-<?php 
+<?php
 // tabellatore.php
-// prende in input un file di colonne separate da tabulazioni 
+// prende in input un file di colonne separate da tabulazioni
 // crea una tabella LaTeX a partire dal file servito.
 $valori=file_get_contents($argv[1]);
-$valori=str_replace(array("\t", "\n"), array("\t& ", "\t\\\\\n"), $valori); 
+$valori=str_replace(array("\t", "\n"), array("\t& ", "\t\\\\\n"), $valori);
 echo $valori;
-?> 
+?>
 
 ```
 
