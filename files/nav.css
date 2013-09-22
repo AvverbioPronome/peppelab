@@ -1,0 +1,49 @@
+li a {
+    margin: 0;
+    padding: 0 !important;
+}
+
+ul.nav li a:hover{
+    background: transparent;
+}
+
+ul.nav li{
+    margin: 0.3ex auto;
+}
+
+#nav ul.nav{
+    margin-top: 2ex;
+}
+
+ul.nav li{
+    list-style-type: none;
+}
+
+ul.nav  li.current{
+     background: #eee; 
+}
+
+ul.nav > li ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul.nav > li{
+    list-style-position: inside;
+    padding-left: 1em;
+}
+
+ul.nav > li li {
+    list-style-position: inside ;
+    padding-left: 3em;
+}
+
+figure{
+    margin: 1ex auto;
+    text-align: center;
+}
+
+figcaption{
+    font-size: small;
+    font-style: italic;
+}
