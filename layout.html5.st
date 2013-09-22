@@ -5,6 +5,7 @@
    <meta charset="UTF-8" />
    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" />
+   <link rel="stylesheet" href="nav.css" />
 </head>
 <body>
   <div class="container">
