@@ -13,6 +13,11 @@ Pandoc
 Emacs
   ~ Un intero sistema operativo al quale manca un editor decente, dicono i suoi detrattori. Questa è la parte meno fondamentale di tutte, a dir il vero. Usate l'editor che più vi piace.
 
+<!-- ## Markdown 
+Qui aggiungerò un'introduzione a Markdown, perché questo documento non può essere davvero completo senza.
+
+-->
+
 ## Impostare tutto il sistema
 I vari software una volta installati dovrebbero comunicare senza necessità di interventi ulteriori.
 
