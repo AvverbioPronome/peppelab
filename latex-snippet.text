@@ -1,0 +1,90 @@
+Snippet LaTeX
+==============
+
+Questo post sarà modificato spesso, serve a conservare snippet che
+voglio trovare subito, quando mi servono. Suggerimenti ben accetti.
+
+Un documento "vuoto"
+--------------------
+
+```{.latex}
+\documentclass[11pt,a4paper]{article}
+\usepackage[italian]{babel} \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{microtype} \usepackage[hidelinks]{hyperref}
+\usepackage{booktabs} \usepackage{graphicx}
+
+\usepackage{amsmath} \usepackage{amssymb}
+
+\author{Pinco Pallino \and Paolino Paperino} \title{Una relazione
+qualsiasi.} \date{\today}
+
+\begin{document} \maketitle \begin{abstract} % Abstract.
+\end{abstract} 
+%\tableofcontents \listoffigures \listoftables %
+% questa riga finirà commentata prima di subito, se vuoi usare
+% l'abstract descrivendo il lavoro. % commentata per intero o anche a
+% pezzi. eventualmente, figures e tables si spostano in coda.
+
+\end{document} 
+
+```
+
+Parti
+-----
+
+### Un'immagine.
+
+```{.latex} 
+\begin{figure}[htpb] \centering
+\includegraphics[width=0.9\textwidth]{filename} \caption{
+\label{fig:}} \end{figure} 
+
+```
+
+### Un'immagine ruotata sul lato lungo della pagina.
+
+```{.latex} 
+\begin{sidewaysfigure}[p] % needs &quot;rotating&quot;
+\centering \includegraphics[height=0.9\textheight]{filename}
+\caption{ \label{fig:}} \end{sidewaysfigure} 
+
+```
+
+
+Script utili
+------------
+
+### Trasformare un tsv in una tabella
+
+Script parecchio artigianale che serve soltanto a fare un trova e
+sostituisci.
+
+```{.php}
+#! /usr/bin/php
+
+<?php 
+// tabellatore.php
+// prende in input un file di colonne separate da tabulazioni 
+// crea una tabella LaTeX a partire dal file servito.
+$valori=file_get_contents($argv[1]);
+$valori=str_replace(array("\t", "\n"), array("\t& ", "\t\\\\\n"), $valori); 
+echo $valori;
+?> 
+
+```
+
+miglioramenti che si potrebbero apportarvi:
+
+-   si potrebbe riscrivere in linguaggi più performanti;
+-   si potrebbero fargli raggruppare le tabulazioni consecutive;
+-   si potrebbe far leggere da STDIN riga per riga invece che dal disco
+    tutto insieme, così da renderlo un filtro ed ottimizzare l'uso della
+    memoria;
+-   si potrebbe scrivere sotto forma di pacchetto LaTeX in modo da
+    evitare conversioni esterne;
+-   ...
+
+Se hai come migliorarlo o hai implementato uno dei punti sopra,
+[scrivi](mailto:peppelab@altervista.org).

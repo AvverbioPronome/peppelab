@@ -1,0 +1,16 @@
+# Il modo in cui Cal. scrive
+È un po' complicato ed ha avuto bisogno di un po' di tempo per arrivare al grado di collaudamento attuale. Esso si compone di diversi *software*, dal basso verso la tastiera:
+
+LaTeX
+  ~ Dovrebbe andare bene una distribuzione qualsiasi, a patto che pandoc sappia dove trovarla. Quindi deve trovarsi in `$PATH` e tutte le altre belle cose che il tuo sistema tenta di nasconderti.
+
+Pandoc
+  ~ Convertitore universale di documenti. Scaricabile [qui](http://johnmacfarlane.net/pandoc/installing.html).
+
+`make`
+  ~ Questo dovrebbe già essere su ogni sistema degno di questo nome. Su windows manca. Non ho idea di come possa essere sostituito; forse Cygwin lo implementa...
+
+Emacs
+  ~ Un intero sistema operativo al quale manca un editor decente, dicono i suoi detrattori. Questa è la parte meno fondamentale di tutte, a dir il vero. Usate l'editor che più vi piace.
+
+*((to be continued))*

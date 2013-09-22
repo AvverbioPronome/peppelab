@@ -1,0 +1,23 @@
+- url: index.html
+  title: Home
+  source: principale.text
+- Gnuplot:
+    - url: gnuplot-appunti.html
+      title: appunti
+      source: gnuplot-appunti.text
+    - url: gnuplot-geografia.html
+      title: geografia
+      source: plottare-dati-geografici-con-gnuplot.text
+- LaTeX:
+    - url: latex-snippet.html
+      title: snippet
+      source: latex-snippet.text
+    - url: come-scrive-cal.html
+      title: come scrivo io
+      source: come-scrive-cal.text
+- url: democrazia.html
+  title: demche?
+  source: democrazia.text
+- url: storiarte.html
+  title: StoriArte
+  source: storiarte.text
