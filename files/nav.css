@@ -48,6 +48,10 @@ figcaption{
     font-style: italic;
 }
 
+@media print{
+    #nav {display:none;}
+}
+
 /* from https://github.com/jgm/yst/blob/master/demo/files/css/hk-pyg.css */
 /* Loosely based on pygment's default colors */
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
