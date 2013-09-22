@@ -21,7 +21,7 @@ Qui aggiungerò un'introduzione a Markdown, perché questo documento non può es
 ## Impostare tutto il sistema
 I vari software una volta installati dovrebbero comunicare senza necessità di interventi ulteriori.
 
-Il makefile, per il quale si ringraziano varie persone trovate prima o poi su google, che cal di solito invoca con `M-! make <ret>`, fa questa roba:
+Il makefile, per il quale si ringraziano varie persone trovate prima o poi su google, che cal di solito invoca con `M-! make <RET>`, fa questa roba:
 
 - elenca tutti i file `.text` nella dir in cui viene invocato, e
 - sostituendo l'estensione genera una lista di target `.pdf` che poi
