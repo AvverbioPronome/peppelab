@@ -27,61 +27,60 @@ Siccome mi annoio troppo a scrivere i passi, inondo lo script di
 commenti: 
 
 
-```{.gnuplot}
-#!/opt/local/bin/gnuplot
-#  -- la riga sopra indica al terminale dove trovare l'interprete adatto. vale solo se questo file ha il flag x
-#  <http://gnuplot-surprising.blogspot.com/2011/09/gnuplot-background-image.htm>
+```{.gnuplot} 
+#!/opt/local/bin/gnuplot 
+# -- la riga sopra indica al terminale dove trovare l'interprete
+# adatto. vale solo se questo file ha il flag x #
+# http://gnuplot-surprising.blogspot.com/2011/09/gnuplot-background-image.html
 
 reset # utile solo se viene caricato con `load`
-set term pngcairo nocrop enhanced size 477,599 truecolor
-
+set term pngcairo nocrop enhanced size 477,599 truecolor 
 # vogliamo un buon png, con antialiasing, i due numeri indicano le dimensioni che vogliamo ottenere.
 
 set output "graphmap_italy.png"
-
-#  come si chiama il file che vogliamo ottenere?
+# come si chiama il file che vogliamo ottenere?
 
 set multiplot
+# dobbiamo plottare più di un grafico sulla tela, chi l'avrebbe mai detto?
 
-#  dobbiamo plottare più di un grafico sulla tela, chi l'avrebbe mai detto?
+set xrange [0:476]
+set yrange [0:598]
+# inizio e fondo scala del "grafico" sfondo	
 
-set xrange [0:476] set yrange [0:598]
+unset tics
+unset border
+unset key
+# niente tacche, bordi e legenda.
 
-#  inizio e fondo scala del "grafico" sfondo
-
-unset tics unset border unset key
-
-#  niente tacche, bordi e legenda.
-
-set lmargin at screen 0 set rmargin at screen 1 set bmargin at screen 0
+set lmargin at screen 0
+set rmargin at screen 1
+set bmargin at screen 0
 set tmargin at screen 1
-
-#  il grafico occupa tutta la tela.
+# il grafico occupa tutta la tela.
 
 plot "equirectangular_italy_477x599.png" binary filetype=png w rgbimage
+# ora lo sfondo è disegnato! :D 
 
-#  ora lo sfondo è disegnato! :D
+set xrange [6.2:19]
+set yrange [35.3:47.4]
+# gli estremi geografici dell'area rappresentata ;)
 
-set xrange [6.2:19] set yrange [35.3:47.4]
-
-#  gli estremi geografici dell'area rappresentata ;)
-
-set lmargin at screen 0 set rmargin at screen 1 set bmargin at screen 0
-set tmargin at screen 1 unset tics unset border unset key
-
-#  come sopra, espandiamo e puliamo.
+set lmargin at screen 0
+set rmargin at screen 1
+set bmargin at screen 0
+set tmargin at screen 1
+unset tics
+unset border
+unset key
+# come sopra, espandiamo e puliamo.
 
 set style fill transparent solid 0.35 noborder
+# che tipo di cerchi vogliamo?
 
-#  che tipo di cerchi vogliamo?
+plot "italian_top1000_cities_coordinates_census2001.tsv" using 3:2:(sqrt($4)/3500) with circles;
+# altro da spiegare? la terza colonna è il raggio dei cerchi. 
 
-plot "italian_top1000_cities_coordinates_census2001.tsv" using
-3:2:(sqrt($4)/3500) with circles;
-
-#  altro da spiegare? la terza colonna è il raggio dei cerchi.
-
-unset multiplot 
-
+unset multiplot
 ```
 
 ![E quello che otteniamo: la popolazione delle prime mille città d'italia, 2001](Graphmap_italy.png)
