@@ -13,4 +13,53 @@ Pandoc
 Emacs
   ~ Un intero sistema operativo al quale manca un editor decente, dicono i suoi detrattori. Questa è la parte meno fondamentale di tutte, a dir il vero. Usate l'editor che più vi piace.
 
-*((to be continued))*
+## Impostare tutto il sistema
+I vari software una volta installati dovrebbero comunicare senza necessità di interventi ulteriori.
+
+Il makefile, per il quale si ringraziano varie persone trovate prima o poi su google, che cal di solito invoca con `M-! make <ret>`, fa questa roba:
+
+- elenca tutti i file `.text` nella dir in cui viene invocato, e
+- sostituendo l'estensione genera una lista di target `.pdf` che poi
+- compila con le opzioni scelte.
+
+```{.make}
+PANDOC = pandoc
+
+PANVARS = --var=papersize:a4paper \
+	--var=lang:italian 
+
+FILES = $(patsubst %.text,%.pdf,$(wildcard *.text))
+
+all: $(FILES)
+
+%.pdf: %.text makefile
+	$(PANDOC) $(PANVARS) -o $@ $< && open $@
+
+%.tex: %.text makefile
+	$(PANDOC) $(PANVARS) --standalone -o $@ $<
+
+```
+Ci potrebbero essere modifiche per supportare una bibliografia o inserire altra roba arbitraria nel preambolo, strumento che uso per includere `siunitx`, di solito, o per ridimensionare la dimensione massima delle immagini nei documenti. Per esempio:
+
+```{.make}
+PANDOC = pandoc
+
+PANVARS = --var=papersize:a4paper \
+	--var=lang:italian \
+	--var=header-includes:'\frenchspacing\ifdefined\maxwidth\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{\#1}}\fi' \
+	--bibliography $*.bib
+
+FILES = $(patsubst %.text,%.pdf,$(wildcard *.text))
+
+all: $(FILES)
+
+%.pdf: %.text makefile %.bib
+	$(PANDOC) $(PANVARS) -o $@ $< && open $@
+
+%.tex: %.text makefile %.bib
+	$(PANDOC) $(PANVARS) --standalone -o $@ $<
+
+```
+
+## Emacs
+`Markdown-mode` è abbastanza funzionante, se si ricorda di abilitare la matematica nei documenti `(setq 'markdown-enable-math t)`, mi pare; in modo che non tratti gli underscore dei pedici come comandi per corsivo, e se si affianca ad `adaptive-wrap`.
