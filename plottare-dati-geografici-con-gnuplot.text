@@ -1,9 +1,9 @@
-# Plottare dati geografici con `Gnuplot`
+# Plottare dati geografici con `gnuplot`
 
 Scrivere documentazione è una cosa insopportabile.
 
 Adesso affronteremo come plottare dati geografici con
-[Gnuplot](http://gnuplot.info). Ci serviranno, nell'ordine:
+[gnuplot](http://gnuplot.info). Ci serviranno, nell'ordine:
 
 **Un file di dati** in un formato accettato da gnuplot, importante che
 abbia colonne per latitudine e longitudine. La prima colonna non sarà
