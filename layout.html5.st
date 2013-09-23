@@ -12,12 +12,12 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
-        $contents$
-      </div>
-      <div id="nav" class="col-md-3">
-        $nav$
-      </div>
+      <section class="col-md-9">
+$contents$
+      </section>
+      <nav id="nav" class="col-md-3">
+$nav$
+      </nav>
     </div>
   </div>
 <!-- Google Analytics BEGIN -->
