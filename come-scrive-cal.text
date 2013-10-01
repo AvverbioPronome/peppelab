@@ -68,7 +68,7 @@ all: $(FILES)
 
 Un altro makefile che Cal. vuole appuntare qui è questo, che, oltre a fare quanto descritto nei commenti con le immagini, evita di stampare sulla shell ciò che non è errore.
 
-````{.make}
+```{.make}
 
 PANDOC = @pandoc
 PANVARS = --var=papersize:a4paper \
@@ -95,7 +95,7 @@ all: $(FILES)
 %.tex: %.text makefile %.bib
 	$(PANDOC) $(PANVARS) --standalone -o $@ $< $(PIPE)
 
-````
+```
 
 ## Emacs
 `Markdown-mode` è abbastanza funzionante, se si ricorda di abilitare la matematica nei documenti `(setq 'markdown-enable-math t)`, mi pare; in modo che non tratti gli underscore dei pedici come comandi per corsivo, e se si affianca ad `adaptive-wrap`.
