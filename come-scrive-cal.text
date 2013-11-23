@@ -99,7 +99,7 @@ all: $(FILES)
 ```
 
 ## Emacs
-`Markdown-mode` è abbastanza funzionante, se si ricorda di abilitare la matematica nei documenti `(setq 'markdown-enable-math t)`, mi pare; in modo che non tratti gli underscore dei pedici come comandi per corsivo, e se si affianca ad `adaptive-wrap`.
+`Markdown-mode` è abbastanza funzionante, se si ricorda di abilitare la matematica nei documenti `(setq markdown-enable-math t)`, mi pare; in modo che non tratti gli underscore dei pedici come comandi per corsivo, e se si affianca ad `adaptive-wrap`.
 
 Un miglioramento notevole viene ottenuto cambiando il cursore di default di emacs ed impostando un po' di roba semplice nel `.emacs`:
 
