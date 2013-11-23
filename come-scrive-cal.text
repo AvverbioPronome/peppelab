@@ -18,7 +18,7 @@ Qui aggiungerò un'introduzione a Markdown, perché questo documento non può es
 
 -->
 
-## Impostare tutto il sistema
+## Makefiles
 I vari software una volta installati dovrebbero comunicare senza necessità di interventi ulteriori.
 
 Il makefile, per il quale si ringraziano varie persone trovate prima o poi su google, che cal di solito invoca con `M-! make <RET>`, fa questa roba:
@@ -42,8 +42,9 @@ all: $(FILES)
 
 %.tex: %.text makefile
 	$(PANDOC) $(PANVARS) --standalone -o $@ $<
-
+    
 ```
+
 Ci potrebbero essere modifiche per supportare una bibliografia o inserire altra roba arbitraria nel preambolo, strumento che uso per includere `siunitx`, di solito, o per ridimensionare la dimensione massima delle immagini nei documenti. Per esempio:
 
 ```{.make}
@@ -99,3 +100,32 @@ all: $(FILES)
 
 ## Emacs
 `Markdown-mode` è abbastanza funzionante, se si ricorda di abilitare la matematica nei documenti `(setq 'markdown-enable-math t)`, mi pare; in modo che non tratti gli underscore dei pedici come comandi per corsivo, e se si affianca ad `adaptive-wrap`.
+
+Un miglioramento notevole viene ottenuto cambiando il cursore di default di emacs ed impostando un po' di roba semplice nel `.emacs`:
+
+- riconoscimento automatico delle estensioni per markdown;
+- evidenziazione della riga corrente `hl-line-mode`;
+- "a capo automatico" morbido `visual-line-mode`;
+- font proporzionale (migliora **di molto** la leggibilità, quando non si tratta di codice) `variable-pitch-mode`.
+
+```elisp
+(delete-selection-mode 1) ; se cominci a scrivere con del testo selezionato, ciò che scrivi sostituisce la selezione
+
+;; Markdown mode
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Text mode (applies to Markdown & LaTeX, too)
+(add-hook 'text-mode-hook 'hl-line-mode)
+(add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode); a capo automatico
+(add-hook 'text-mode-hook 'variable-pitch-mode); font proporzionale
+
+```
+
+## Cose da fare
+
+- creare il famoso repo dei dotfiles a forza di symlink.
