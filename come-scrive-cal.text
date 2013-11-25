@@ -42,7 +42,6 @@ all: $(FILES)
 
 %.tex: %.text makefile
 	$(PANDOC) $(PANVARS) --standalone -o $@ $<
-    
 ```
 
 Ci potrebbero essere modifiche per supportare una bibliografia o inserire altra roba arbitraria nel preambolo, strumento che uso per includere `siunitx`, di solito, o per ridimensionare la dimensione massima delle immagini nei documenti. Per esempio:
@@ -64,13 +63,11 @@ all: $(FILES)
 
 %.tex: %.text makefile %.bib
 	$(PANDOC) $(PANVARS) --standalone -o $@ $<
-
 ```
 
 Un altro makefile che Cal. vuole appuntare qui è questo, che, oltre a fare quanto descritto nei commenti con le immagini, evita di stampare sulla shell ciò che non è errore.
 
 ```{.make}
-
 PANDOC = @pandoc
 PANVARS = --var=papersize:a4paper \
 	--var=lang:italian \
@@ -95,7 +92,6 @@ all: $(FILES)
 
 %.tex: %.text makefile %.bib
 	$(PANDOC) $(PANVARS) --standalone -o $@ $< $(PIPE)
-
 ```
 
 ## Emacs
@@ -123,8 +119,34 @@ Un miglioramento notevole viene ottenuto cambiando il cursore di default di emac
 (add-hook 'text-mode-hook 'adaptive-wrap-prefix-mode)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode); a capo automatico
 (add-hook 'text-mode-hook 'variable-pitch-mode); font proporzionale
-
 ```
+
+### Correttore ortografico
+
+*(NOTA BENE: questa cosa non funziona abbastanza da essere usata)*
+
+Ho anche provato a configurare un correttore ortografico per supportarmi nella scrittura in emacs. Pare che il migliore disponibile sia *hunspell*. L'interfaccia di emacs, `ispell.el` supporta hunspell, ed hunspell ha una modalità di compatibilità con *ispell*. 
+
+Dopo innumerevoli ricerche ed ore perse a tentare di configurare il tutto, con nessun cane che si fosse degnato di scrivere della documentazione su cosa fossero i campi delle "tuple" (come si chiamano queste cose in elisp?) di `ispell-dictionary-alist`, una casuale ricerca google mi porta al sorgente di ispell.el, che si documenta abbastanza bene (sebbene sia poco comprensibile il significato stesso della documentazione, è da dire); cosa che mi consente finalmente di scrivere le poche righe necessarie in `.emacs`:
+
+```elisp
+;; Ispell (really hunspell)
+(require 'ispell)
+(setq ispell-local-dictionary-alist
+  '(("italian"
+     "[A-Za-zàèéìòùÀÈÉÌÒÙ]" "[^A-Za-zàèéìòùÀÈÉÌÒÙ]" "[']" nil
+     ("-d" "/Applications/LibreOffice.app/Contents/share/extensions/dict-it/it_IT") "~list" utf-8)))
+(eval-after-load "ispell"
+  (progn
+    (setq ispell-dictionary "italian"
+          ispell-extra-args '("-a" "-i" "utf-8")
+          ispell-silently-savep t)))
+(setq-default ispell-program-name "hunspell")
+```
+
+Imho il problema si trova da qualche parte fra huspell e gli affix file del dizionario italiano (che però in LibO funzionano, quindi non so davvero), in pratica, si impone di correggere il "quand" in "quand'è" rendendolo a sua volta un "quand'è," risultando con un testo contenente "quand'è'è."
+
+Spero che qualcuno più esperto di me risolva questo problema.
 
 ## Cose da fare
 
