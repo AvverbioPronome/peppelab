@@ -64,7 +64,7 @@ Parti
 Script utili
 ------------
 
-### Trasformare un tsv in una tabella
+### Trasformare un tsv in una tabella {#tabellatore}
 
 Script parecchio artigianale che serve soltanto a fare un trova e
 sostituisci.
