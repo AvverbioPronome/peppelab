@@ -4,3 +4,4 @@ markdown_ext: markdown,md,text
 pygments: false
 lang: it
 permalink: /blog/:year/:title.html
+exclude: [a, storiarte]
