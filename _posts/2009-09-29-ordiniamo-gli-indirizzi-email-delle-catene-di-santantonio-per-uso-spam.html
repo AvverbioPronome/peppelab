@@ -1,0 +1,54 @@
+---
+layout: post
+title: ordiniamo gli indirizzi email delle catene di sant'antonio per uso spam ;)
+categories:
+- Code
+tags:
+- catena
+- csv
+- email
+- organizzare
+- php
+- sant'antonio
+- spam
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  dsq_thread_id: '64983328'
+  _syntaxhighlighter_encoded: '1'
+author:
+  login: peppelog
+  email: peppecal@gmail.com
+  display_name: peppe
+  first_name: ''
+  last_name: ''
+---
+<p>Beh, ridicolo scrivere apertamente di essere spammoso, infatti non lo sono. Cercavo un modo rapido per creare un file csv con gli indirizzi email trovati in un blocco di testo informe e ho scritto questo pezzo di codice.<br />
+[php]<br />
+&lt;?php //Leggere i commenti per capire come funziona.<br />
+header(&quot;Content-Type: text/plain&quot;);<br />
+//il file manda output in text/plain, non ha senso usare html...<br />
+$origine=file_get_contents(&quot;email.txt&quot;);<br />
+//email.txt è il file, nella stessa directory dello script, che contiene la massa informe di testo da cui estrarre gli indirizzi.<br />
+$regexp=&quot;/[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i&quot;;<br />
+//l'espressione regolare di un indirizzo email...<br />
+$end=&quot;&quot;;<br />
+preg_match_all($regexp, $origine, $indirizzi);<br />
+//troviamo gli indirizzi.</p>
+<p>$unique=array_unique($indirizzi[0]);<br />
+//eliminiamo i doppioni<br />
+sort($unique);</p>
+<p>echo count($unique).&quot;\n&quot;;<br />
+//stampiamo il numero di indirizzi trovati...</p>
+<p>while(list(, $indirizzo)=each($unique)){<br />
+	$end .= strtolower($indirizzo) . &quot;\n&quot;;<br />
+	}; //la variabile $end contiene tutti gli indirizzi, uno per riga.</p>
+<p>	if(file_put_contents(&quot;contatti.csv&quot;, $end)) {<br />
+		echo &quot;OK, done. look at \&quot;contatti.csv\&quot;&quot;; };<br />
+//scrive $end nel file contatti.csv, che troverai<br />
+//nella stessa dir dello script<br />
+?&gt;[/php]<br />
+Dopo avere eseguito questo script (su sistemi unix basterà scrivere "php nomefile" in terminale, dopo aver commentato la prima riga "header...") troverai nella sua directory il file <tt>contatti.csv</tt> che contiene tutti gli indirizzi uno per riga.</p>
+<p><ins datetime="2009-09-29T19:58:25+00:00">Aggiungo: ovviamente la directory deve essere scrivibile dall'utente che esegue lo script da terminale, o da tutti se viene usato via apache.</ins></p>

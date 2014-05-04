@@ -34,8 +34,13 @@ ul.nav > li{
 }
 
 ul.nav > li li {
-    list-style-position: inside ;
-    padding-left: 3em;
+    list-style-position: outside ;
+    padding-left: 1em;
+    font-size: 83%;
+}
+
+ul.nav > li li:before {
+    content: "» ";
 }
 
 figure{

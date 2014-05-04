@@ -1,0 +1,38 @@
+---
+layout: default
+title: index
+---
+
+# {{ site.name }}
+
+<!-- 
+## Mappa
+-->
+
+## Ultime
+
+(probabilmente molto vecchie. avrai più fortuna con [l'aggregatore](/a))
+
+{% for post in site.posts, limit:5 %}
+- [{{ post.title }}]({{ post.url }}){% endfor %}
+
+## Elsewhere
+
+
+## About
+
+> «Penso una cosa e la dimentico prima di dirla, comincio a
+> parlare e visto che penso più velocemente di quanto parlo, dimentico
+> cosa volevo dire prima di arrivare a dirlo. inoltre, sono sempre
+> conflittato fra la costruzione inglese "periodi corti, usa i capoversi"
+> e quella italiana "periodi lunghi, tons di subordinate". ma per usarla
+> devo coordinare il pensiero, cosa che mi viene male. per questo sono un
+> animale da brainstorming, sparo fuori istantaneamente – urlando – ogni
+> cosa che mi viene in mente; spesso riesco a migliorare idee altrui, ma è
+> difficile che io venga fuori con qualcosa di articolato già in partenza.
+> :P» -- *cit, il motivo per cui uso una wiki. uno dei.*
+
+
+## Contatti
+
+- peppelab@altervista.org

@@ -1,0 +1,64 @@
+---
+layout: post
+title: Snippet LaTeX
+categories:
+- Code
+tags:
+- latex
+- snippet
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _syntaxhighlighter_encoded: '1'
+  _pingme: '1'
+  _encloseme: '1'
+author:
+  login: peppelog
+  email: peppecal@gmail.com
+  display_name: peppe
+  first_name: ''
+  last_name: ''
+---
+<p>Questo post sarà modificato spesso, serve a conservare snippet che voglio trovare subito, quando mi servono. Suggerimenti ben accetti.</p>
+<p>Un documento "vuoto":</p>
+<p>[sourcecode lang="latex"]<br />
+\documentclass[11pt,a4paper]{article}<br />
+\usepackage[italian]{babel}<br />
+%\usepackage[utf8]{inputenc} % non usarlo, che \`e meglio.</p>
+<p>\usepackage{siunitx}<br />
+\usepackage{microtype}<br />
+\usepackage[bookmarks,colorlinks=red]{hyperref}<br />
+\usepackage{booktabs}<br />
+\usepackage{graphicx}<br />
+\usepackage{rotating} % quanto sono grosse, le tue tabelle--immagini?</p>
+<p>%\usepackage{amsmath} \usepackage{amssymb} % quanta roba matematica ti serve, eh?<br />
+%\usepackage{fullpage} % vuoi il testo largo come su word?</p>
+<p>\author{Pinco Pallino \and Paolino Paperino}<br />
+\title{Una relazione qualsiasi.}<br />
+\date{\today}</p>
+<p>\begin{document}<br />
+\maketitle<br />
+\begin{abstract}<br />
+	% Abstract.<br />
+\end{abstract}<br />
+%\tableofcontents \listoffigures \listoftables % questa riga finir\`a commentata prima di subito, se vuoi usare l'abstract descrivendo il lavoro. commentata per intero o anche a pezzi. eventualmente, figures e tables si spostano in coda.</p>
+<p>\end{document}<br />
+[/sourcecode]</p>
+<p>Un'immagine.</p>
+<p>[sourcecode lang="latex"]<br />
+\begin{figure}[htpb]<br />
+   \centering<br />
+   \includegraphics[width=0.9\textwidth]{filename}<br />
+   \caption{   \label{fig:}}<br />
+\end{figure}<br />
+[/sourcecode]</p>
+<p>Un'immagine ruotata sul lato lungo della pagina.</p>
+<p>[sourcecode lang="latex"]<br />
+\begin{sidewaysfigure}[p] % needs &amp;quot;rotating&amp;quot;<br />
+   \centering<br />
+   \includegraphics[height=0.9\textheight]{filename}<br />
+   \caption{   \label{fig:}}<br />
+\end{sidewaysfigure}<br />
+[/sourcecode]</p>

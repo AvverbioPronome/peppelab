@@ -1,0 +1,33 @@
+---
+layout: post
+title: 301 redirect
+categories:
+- Changelog
+- Code
+tags:
+- ".htaccess"
+- http 301
+- http 404
+- peppe's 2.0
+- redirect
+- storiarte
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: peppelog
+  email: peppecal@gmail.com
+  display_name: peppe
+  first_name: ''
+  last_name: ''
+---
+<p>Ovvero: come cambiare completamente la struttura degli url del proprio sito senza perdere alcun collegamento...</p>
+<p>Situazione: questo sito usava url del tipo <tt>/blog/anno/mese/nomepost</tt> per i post del blog e url come <tt>/sezioni/storiarte</tt> per le pagine statiche. Per fare in modo che nessuno ricevesse errori 404 visitando i vecchi url, un modo molto conveniente di fare è il seguente: usare dei redirect http 301 per spostare i visitatori, ma anche, cosa fondamentale, i bots, sui nuovi indirizzi. Questa soluzione è facilmente implementabile con un file <tt>.htaccess</tt> nella root del sito. la sintassi corretta è:</p>
+<p><code>redirect 301 /vecchio /nuovo</code></p>
+<p>Ossia, il file .htaccess di questo sito deputato a questo lavoro è:</p>
+<p><code> redirect 301 /sezioni/storiarte http://peppelab.altervista.org/storiarte<br />
+ redirect 301 /blog /peppe<br />
+ redirect 301 /sezioni/contatti/form.php /peppe/contatti</code></p>
+<p>La cosa interessante di tutto ciò è che non vengono redirezionati solo gli url esatti che compaiono nel file, ma pure quelli che iniziano con tali url, quindi se per esempio, tornando al pezzo di codice ancora sopra qualcuno visitasse <tt>/vecchio/2009/post-numero-uno</tt> sarebbe redirezionato a <tt>/nuovo/2009/post-numero-uno</tt>.</p>
