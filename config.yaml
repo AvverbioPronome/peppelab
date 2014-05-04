@@ -1,6 +1,0 @@
-indexfile: index.yaml
-title: peppelab
-sourcedir: [.]
-datadir: .
-filesdir: [files]
-layout: layout.html5.st
