@@ -3,7 +3,6 @@ title: "Plottare dati geografici con gnuplot"
 layout: post
 ---
 
-
 # Plottare dati geografici con `gnuplot`
 
 Scrivere documentazione è una cosa insopportabile.
@@ -24,7 +23,7 @@ wikimedia commons come "*location map*".
 
 La cartina da cui vogliamo partire è questa:
 
-![l'immagine di partenza. (da wikimedia commons)](400px-Italy_location_map.svg.png)
+![l'immagine di partenza. (da wikimedia commons)](/files/400px-Italy_location_map.svg.png)
 
 Cominciamo:
 -----------
@@ -89,7 +88,7 @@ plot "italian_top1000_cities_coordinates_census2001.tsv" using 3:2:(sqrt($4)/350
 unset multiplot
 ```
 
-![E quello che otteniamo: la popolazione delle prime mille città d'italia, 2001](Graphmap_italy.png)
+![E quello che otteniamo: la popolazione delle prime mille città d'italia, 2001](/files/Graphmap_italy.png)
 
 To be done:
 -----------
