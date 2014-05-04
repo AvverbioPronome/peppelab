@@ -1,7 +1,7 @@
 name: peppelab. 
-markdown: redcarpet
-markdown_ext: markdown,md,text
-pygments: false
+markdown: pandoc
+markdown_ext: markdown,md,text,html
+pygments: true
 lang: it
 permalink: /blog/:year/:title.html
 exclude: [deploy.sh, makefile]
