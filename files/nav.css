@@ -46,6 +46,11 @@ ul.nav > li li:before {
 figure{
     margin: 1ex auto;
     text-align: center;
+    max-width: 100%;
+}
+
+figure img {
+    max-width: 80%;
 }
 
 figcaption{
