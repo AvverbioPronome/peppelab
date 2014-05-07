@@ -2,7 +2,6 @@ name: peppelab.
 url: "http://peppelab.altervista.org"
 markdown: pandoc
 markdown_ext: markdown,md,text,html
-pygments: true
-lang: it
+highlighter: pygments
 permalink: /blog/:year/:title.html
 exclude: [deploy.sh, makefile]
