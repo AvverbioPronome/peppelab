@@ -5,7 +5,7 @@ all: kill
 	open 'http://0.0.0.0:4000'
 
 kill:
-	killall -9 '$(SERVE)' || echo 0
+	killall -9 '$(SERVE)' || true
 
 build:
 	jekyll build
