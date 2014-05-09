@@ -1,0 +1,69 @@
+---
+layout: default
+title: Critica di LiquidFeedback
+---
+
+# Critica di liquid feedback
+
+LiquidFeedback è un software di voto. Questa è probabilmente l'unica affermazione che non è in discussione.
+
+
+## Funzionamento di liquid
+
+Ne ho scritto in passato, e ci sono slide e documento a descrivere il percorso di una proposta. Credo di ricordarmi di aver notato un'imprecisione, in quei testi, ma non ricordo quale né se l'ho poi corretta. I sorgenti di questa roba sono [su github](https://github.com/9peppe/LiquidFlow), in almeno tre edizioni/branch diversi.
+
+- [Presentazione](http://www.scribd.com/doc/108585372/)
+- [Documento](http://www.scribd.com/doc/108620055/)
+
+[Altri documenti](http://www.piratpartiet.it/mediawiki/index.php?title=Vademecum_LiquidFeedback) sono stati elaborati da altra gente.
+
+
+## Metodo Schulze e maggioranze
+
+LiquidFeedback usa contemporaneamente il metodo Schulze e sistemi multipli di sbarramento.
+
+Il metodo Schulze restituisce un ordinamento di preferenza, ma la contemporanea richiesta che le proposte vincenti superino un determinato quorum di voto, come rapporto di voti a favore (verdi) e voti espressi (verdi+rossi), potrebbe influire su ciò. È successo che proposte con Schulze rank migliore avessero percentuali d'approvazione inferiore a proposte Schulze-peggiori. In questo senso, Schulze non è approval voting ed ottiene risultati diversi: aumentare le maggioranze richieste oltre il 50% (equivalente ad introdurre la proposta fantasma "mantenere lo status quo") ottiene come effetto collaterale la defenestrazione di Schulze.
+
+
+## Liquid e pirateria
+
+Liquid necessita che ogni utente sia identificato in maniera forte. Attraverso documenti di identità e nomi legali, per importare la garanzia d'unicità dei votanti dal ministero dell'interno. Ciò può essere accettabile in ambienti net-radicalchic, ma non lo è affatto fra filibustieri che già vedono l'iscrizione ad un'associazione come una barriera.
+
+Vedi inoltre la [sezione sull'orizzontalità](meno-entusiasta.html#orizzontalita) nell'elenco dei problemi che affliggono il partito pirata italiano, su voto e swarm.
+
+
+## Liquid e minoranze {#minoranze}
+
+Non esistono. L'unica possibilità per le minoranze di non essere barbaramente oppresse, in liquid, è quella di convincere le rispettive maggioranze.
+
+Questa feature viene pubblicizzata dai suoi fan dicendo che liquid è in grado di resistere ad un'invasione di rumorose minoranze neonaziste; ciò è vero. Quel che è vero anch'esso, però, è che tale trattamento non è limitato alle minoranze neonaziste.
+
+
+## Liquid e conflitto {#conflitto}
+
+Liquid è un sistema di voto ed i sistemi di voto portano conflitto. **È sconsigliato negli ambienti in cui la collaborazione è importante.** Più ampio il dominio decisionale, più ampio il conflitto. Liquid non incoraggia la mediazione.
+
+
+## Liquid e motivazione
+
+Le minoranze insoddisfatte *si dileguano*. Pensa bene ai tuoi obiettivi prima di adottare una soluzione del genere, vedi [sopra](#conflitto) e [ancora sopra](#minoranze). Probabilmente è un buon sistema per un amministratore locale che volesse chiedere qualcosa alla cittadinanza (con i soliti problemi di certificazione, rappresentatività, eccetera), ma non per un'associazione.
+
+
+## Liquid e attitudine dei fan
+
+> this is not a problem, YOU are the problem. <cite>[#](http://lists.pirateweb.net/pipermail/pp.international.general/2014-April/015317.html)</cite>
+
+^ nulla da aggiungere. L'attitudine dei fan di lqfb è riassunta magnificamente in quella citazione.
+
+Tutto ciò che accade in liquid, accade *by design*.
+
+
+<!--
+## When you have an hammer, everything becomes a nail
+
+Questo problema forse è l'unico strettamente legato all'uso che ne se fa nel pp-it; oltre alle votazioni, viene usato per:
+
+- comunicazioni;
+- discussione;
+- brainstorming;
+-->
