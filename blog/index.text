@@ -6,5 +6,5 @@ title: "Blog archives"
 # Blog archives
 <ul>
 {% for post in site.posts %}
-<li><span style="font-family: monospace;">{{ post.date | date: "%F" }}&raquo;</span> <a href="{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
+<li><span style="font-family: monospace;">{{ post.date | date: "%F" }}&raquo;</span> <a href="{{ post.url }}">{{ post.title | markdownify | remove:'<p>' | remove:'</p>' }}</a></li>{% endfor %}
 </ul>
