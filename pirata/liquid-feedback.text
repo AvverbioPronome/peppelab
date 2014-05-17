@@ -18,12 +18,17 @@ Ne ho scritto in passato, e ci sono slide e documento a descrivere il percorso d
 [Altri documenti](http://www.piratpartiet.it/mediawiki/index.php?title=Vademecum_LiquidFeedback) sono stati elaborati da altra gente.
 
 
-## Metodo Schulze e maggioranze
+## Liquid e metodo Schulze
 
 LiquidFeedback usa contemporaneamente il metodo Schulze e sistemi multipli di sbarramento.
 
 Il metodo Schulze restituisce un ordinamento di preferenza, ma la contemporanea richiesta che le proposte vincenti superino un determinato quorum di voto, come rapporto di voti a favore (verdi) e voti espressi (verdi+rossi), potrebbe influire su ciò. È successo che proposte con Schulze rank migliore avessero percentuali d'approvazione inferiore a proposte Schulze-peggiori. In questo senso, Schulze non è approval voting ed ottiene risultati diversi: aumentare le maggioranze richieste oltre il 50% (equivalente ad introdurre la proposta fantasma "mantenere lo status quo") ottiene come effetto collaterale la defenestrazione di Schulze.
 
+<!-- supermajority requirements e commento su questa roba qui:
+http://dev.liquidfeedback.org/trac/lf/wiki/SupermajorityRequirements
+nonché
+http://dev.liquidfeedback.org/pipermail/announce/2014-April/000029.html
+-->
 
 ## Liquid e pirateria
 
