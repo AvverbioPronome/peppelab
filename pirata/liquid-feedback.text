@@ -10,25 +10,44 @@ LiquidFeedback è un software di voto. Questa è probabilmente l'unica affermazi
 
 ## Funzionamento di liquid
 
-Ne ho scritto in passato, e ci sono slide e documento a descrivere il percorso di una proposta. Credo di ricordarmi di aver notato un'imprecisione, in quei testi, ma non ricordo quale né se l'ho poi corretta. I sorgenti di questa roba sono [su github](https://github.com/9peppe/LiquidFlow), in almeno tre edizioni/branch diversi.
+Ne ho scritto in passato, e ci sono [slide] e [documento] a descrivere il percorso di una proposta. Credo di ricordarmi di aver notato un'imprecisione, in quei testi, ma non ricordo quale né se l'ho poi corretta. I sorgenti di questa roba sono [su github](https://github.com/9peppe/LiquidFlow), in almeno tre edizioni/branch diversi.
 
-- [presentazione](http://www.scribd.com/doc/108585372/)
-- [documento](http://www.scribd.com/doc/108620055/)
+[slide]: http://www.scribd.com/doc/108585372/
+[documento]: http://www.scribd.com/doc/108620055/
 
-[Altri documenti](http://www.piratpartiet.it/mediawiki/index.php?title=Vademecum_LiquidFeedback) sono stati elaborati da altra gente.
+[Altri documenti](http://www.piratpartiet.it/mediawiki/index.php?title=Vademecum_LiquidFeedback) sono stati elaborati da altra gente. [Molte](http://wiki.pirateparty.be/images/f/fd/Liquidfeedback_english.pdf) altre presentazioni sono disponibili online, facendo [semplici ricerche](https://www.google.com/search?q=liquid+feedback+filetype%3Apdf). 
+
+Un libro abbastanza completo è "[Principles of LiquidFeedback][principles]," scritto dagli autori stessi di lqfb. Possiamo dire che contiene buona parte della documentazione mancante, **_strettamente_ necessaria** per capire il software.
 
 
-## Liquid e metodo Schulze
+## Liquid e metodo Schulze {#schulze}
 
-LiquidFeedback usa contemporaneamente il metodo Schulze e sistemi multipli di sbarramento.
+LiquidFeedback usa contemporaneamente il metodo Schulze e sistemi multipli di sbarramento,  soluzione dei pareggi e del paradosso di Condorcet.[^1]
 
-Il metodo Schulze restituisce un ordinamento di preferenza, ma la contemporanea richiesta che le proposte vincenti superino un determinato quorum di voto, come rapporto di voti a favore (verdi) e voti espressi (verdi+rossi), potrebbe influire su ciò. È successo che proposte con Schulze rank migliore avessero percentuali d'approvazione inferiore a proposte Schulze-peggiori. In questo senso, Schulze non è approval voting ed ottiene risultati diversi: aumentare le maggioranze richieste oltre il 50% (equivalente ad introdurre la proposta fantasma "mantenere lo status quo") ottiene come effetto collaterale la defenestrazione di Schulze.
+Il metodo Schulze è un metodo di Condorcet,[^2] in quanto tale restituisce un ordinamento di preferenza confrontando i candidati a coppie. Nell'insieme di proposte, liquidfeedback inserisce una proposta fantasma rappresentante lo status quo, per separare le proposte approvate dal votante (verdi) e quelle invece respinte (rosse).
 
-<!-- supermajority requirements e commento su questa roba qui:
-http://dev.liquidfeedback.org/trac/lf/wiki/SupermajorityRequirements
-nonché
-http://dev.liquidfeedback.org/pipermail/announce/2014-April/000029.html
--->
+Regolamenti, statuti e leggi dei suoi utenti possono imporre che determinate decisioni vengano prese con determinate maggioranze; *lo Schulze ranking dei candidati non viene però influenzato da ciò*, essendo il vincitore definito come il candidato col ranking più alto fra quelli *eligible*. Ci sono [diversi modi][supdocs] ([principles], §4.12.3) per imporre questa cosa:
+
+- **maggioranza qualificata diretta**: possiamo imporre che $n_{A,SQ} > M_2 \cdot  n_{SQ,A}$, ovvero la proposta $A$ avrà bisogno di essere preferita allo status quo $SQ$ di almeno $M_2$ volte le preferenze contrarie, per essere considerata *eligible*. Questo metodo è descritto da Schulze stesso nel §7 del suo [paper].
+- **maggioranza qualificata attraverso beat-path**: imponiamo che le proposte *eligible* sconfiggano lo status quo attraverso un percorso sul quale ognuno dei rami gode di una maggioranza qualificata definita come sopra.
+- **impedisci reverse beat-paths**: se non esiste vincitore di Condorcet, e lo status quo fa parte delle proposte legate nel loop[^3] (anche attraverso un pareggio), lo status quo vince sempre.
+- **previeni maggioranze multistadio**: quando una proposta $A$, preferita ad una proposta $B$, non ottiene una maggioranza (qualificata) diretta sullo status quo $SQ$, mentre $B$ la ottiene, la proposta $B$ non è *eligible as winner* perché una ripetizione del voto col nuovo status quo $B$ renderebbe immediatamente vincitrice $A$.
+
+Ognuna di queste soluzioni introduce problemi nuovi, per questo motivo, liquid feedback le rende configurabili. La terza, sui reverse beat-path, è fortemente sconsigliata nelle [note di rilascio di liquidfeedback 3.0.1][ann3] perché consente voto tattico a favore dello status quo, da parte di anche piccole minoranze.
+
+L'inserimento delle percentuali di approvazione rende liquid feedback un software di voto che usa *contemporaneamente* il metodo Schulze ed approval voting. Questo fatto non è chiaro alla maggior parte dei suoi utenti. Aumentare le "direct majority" richieste oltre lo zero[^4] ottiene come effetto collaterale la defenestrazione di Schulze—o almeno di Condorcet, dato che l'approvazione passa gradualmente più alle percentuali rispetto allo status quo che al confronto a coppie di Condorcet. (Gli sviluppatori, in [principles] §4.13, sono molto espliciti nello scoraggiare l'uso di maggioranze qualificate come strumento di protezione delle minoranze.)
+
+[supdocs]: http://dev.liquidfeedback.org/trac/lf/wiki/SupermajorityRequirements "poco comprensibile documentazione, sulla wiki di lqfb"
+[moarsup]: http://dev.liquidfeedback.org/pipermail/main/2012-September/000205.html
+[ann3]: http://dev.liquidfeedback.org/pipermail/announce/2014-April/000029.html
+
+[^1]: Dicesi paradosso di Condorcet, quando $A$ è preferita a $B$ che è preferita a $C$ che è preferita ad $A$. L'insieme di Schwartz contiene tutti i candidati che sconfiggono direttamente tutti gli altri, e sono sconfitti al più da membri dello stesso insieme.
+
+[^2]: Quando non si verificano paradossi di Condorcet, il metodo Schulze seleziona il vincitore di Condorcet. Se si verifica un paradosso di Condorcet, non esiste un vincitore di Condorcet, cioè il candidato che sconfigge tutti gli altri in scontri diretti. 
+
+[^3]: "Preferenza ciclica collettiva" è un nome più descrittivo per indicare il paradosso di Condorcet.
+
+[^4]: Una maggioranza semplice (50%) è equivalente a chiedere che il vincitore sia preferito direttamente allo status quo: impone che tutte le proposte *eligible* sconfiggano direttamente lo status quo, droppando automaticamente quelle che non. In caso di paradossi di Condorcet includenti lo status quo, questo crea problemi potendo risultare in proposte con rank migliori dello status quo che non siano *eligible as winner* per mancanza di direct majority.
 
 ## Liquid e pirateria
 
@@ -39,9 +58,11 @@ Vedi inoltre la [sezione sull'orizzontalità](meno-entusiasta.html#orizzontalita
 
 ## Liquid e minoranze {#minoranze}
 
-Non esistono. L'unica possibilità per le minoranze di non essere barbaramente oppresse, in liquid, è quella di convincere le rispettive maggioranze.
+Non esistono. L'unica possibilità per le minoranze di non essere barbaramente oppresse, in liquid, è quella di convincere le rispettive maggioranze. Liquid, è infatti costruito attorno al principio democratico "decidono le maggioranze."
 
 Questa feature viene pubblicizzata dai suoi fan dicendo che liquid è in grado di resistere ad un'invasione di rumorose minoranze neonaziste; ciò è vero. Quel che è vero anch'esso, però, è che tale trattamento non è limitato alle minoranze neonaziste.
+
+C'è un impegno, in lqfb, per rendere visibili le minoranze, con diversi algoritmi di visualizzazione e ordinamento delle proposte.
 
 
 ## Liquid e conflitto {#conflitto}
@@ -72,3 +93,6 @@ Questo problema forse è l'unico strettamente legato all'uso che ne se fa nel pp
 - discussione;
 - brainstorming;
 -->
+
+[principles]: http://principles.liquidfeedback.org
+[paper]: http://m-schulze.9mail.de/schulze1.pdf
