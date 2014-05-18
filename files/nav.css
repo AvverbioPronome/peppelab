@@ -12,7 +12,7 @@ ul.nav li{
 }
 
 #nav ul.nav{
-    margin-top: 2ex;
+    margin: 2ex auto;
 }
 
 ul.nav li{
@@ -34,9 +34,15 @@ ul.nav > li{
 }
 
 ul.nav > li li {
-    list-style-position: outside ;
     padding-left: 1em;
-    font-size: 83%;
+}
+
+@media (min-width:992px){
+    ul.nav > li li {
+        font-size: 83%;
+    /* i link di secondo livello sono più piccoli
+       solo se la sidebar sta di lato. */
+    }
 }
 
 ul.nav > li li:before {
