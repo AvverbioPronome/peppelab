@@ -20,7 +20,7 @@ build:
 
 deploy: build
 	@echo "uploading... "
-	ftpsync $(FTPOPTIONS) ./_site ftp://peppelab:$(FTPASSWORD)@peppelab.altervista.org// 
+	@ftpsync $(FTPOPTIONS) ./_site ftp://peppelab:$(FTPASSWORD)@peppelab.altervista.org// 
 
 push: deploy
 	git push
