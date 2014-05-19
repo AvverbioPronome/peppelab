@@ -43,7 +43,7 @@ L'inserimento delle percentuali di approvazione rende liquid feedback un softwar
 
 [^1]: Dicesi paradosso di Condorcet, quando $A$ è preferita a $B$ che è preferita a $C$ che è preferita ad $A$. L'insieme di Schwartz contiene tutti i candidati che sconfiggono direttamente tutti gli altri, e sono sconfitti al più da membri dello stesso insieme.
 
-[^2]: Quando non si verificano paradossi di Condorcet, il metodo Schulze seleziona il vincitore di Condorcet. Se si verifica un paradosso di Condorcet, non esiste un vincitore di Condorcet, cioè il candidato che sconfigge tutti gli altri in scontri diretti, e liquid ricalcola il vincitore di Condorcet sostituendo iterativamente il link più debole con un pareggio. 
+[^2]: Quando non si verificano paradossi di Condorcet, il metodo Schulze seleziona il vincitore di Condorcet. Se si verifica un paradosso di Condorcet, non esiste un vincitore di Condorcet, cioè il candidato che sconfigge tutti gli altri in scontri diretti, e liquid ricalcola il vincitore di Condorcet sostituendo iterativamente il link più debole con un pareggio (un'implementazione di Schulze che si chiama "Schwartz Sequential Dropping").
 
 [^3]: "Preferenza ciclica collettiva" è un nome più descrittivo per indicare il paradosso di Condorcet.
 
