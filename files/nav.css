@@ -15,26 +15,20 @@ ul.nav li{
     margin: 2ex auto;
 }
 
-ul.nav li{
-    list-style-type: none;
-}
-
-ul.nav  li.current{
-     background: #eee; 
-}
-
 ul.nav > li ul {
     margin: 0;
     padding: 0;
 }
 
 ul.nav > li{
+    list-style-type: none;
     list-style-position: inside;
     padding-left: 1em;
 }
 
 ul.nav > li li {
     padding-left: 1em;
+    list-style-type: square;
 }
 
 @media (min-width:992px){
@@ -43,10 +37,6 @@ ul.nav > li li {
     /* i link di secondo livello sono più piccoli
        solo se la sidebar sta di lato. */
     }
-}
-
-ul.nav > li li:before {
-    content: "» ";
 }
 
 figure{
