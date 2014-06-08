@@ -32,7 +32,7 @@ Il makefile, per il quale si ringraziano varie persone trovate prima o poi su go
 - sostituendo l'estensione genera una lista di target `.pdf` che poi
 - compila con le opzioni scelte.
 
-```{.make}
+```makefile
 PANDOC = pandoc
 
 PANVARS = --var=papersize:a4paper \
@@ -51,40 +51,16 @@ all: $(FILES)
 
 Ci potrebbero essere modifiche per supportare una bibliografia o inserire altra roba arbitraria nel preambolo, strumento che uso per includere `siunitx`, di solito, o per ridimensionare la dimensione massima delle immagini nei documenti. Per esempio:
 
-```{.make}
-PANDOC = pandoc
 
-PANVARS = --var=papersize:a4paper \
-	--var=lang:italian \
-	--var=header-includes:'\frenchspacing\ifdefined\maxwidth\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{\#1}}\fi' \
-	--bibliography $*.bib
-
-FILES = $(patsubst %.text,%.pdf,$(wildcard *.text))
-
-all: $(FILES)
-
-%.pdf: %.text makefile %.bib
-	$(PANDOC) $(PANVARS) -o $@ $< && open $@
-
-%.tex: %.text makefile %.bib
-	$(PANDOC) $(PANVARS) --standalone -o $@ $<
-```
-
-Un altro makefile che Cal. vuole appuntare qui è questo, che, oltre a fare quanto descritto nei commenti con le immagini, evita di stampare sulla shell ciò che non è errore.
-
-```{.make}
+```makefile
 PANDOC = @pandoc
+
 PANVARS = --var=papersize:a4paper \
 	--var=lang:italian \
-	--var=header-includes:'\usepackage{baskervald}\frenchspacing' \
-	--var=header-includes:'\makeatletter\ifdefined\ScaleIfNeeded\def\ScaleIfNeeded{ \ifdim\Gin@nat@width>\linewidth\ifdim\Gin@nat@height>.75\Gin@nat@width .75\linewidth\else\linewidth\fi\else\Gin@nat@width\fi}\fi\makeatother' \
-	--bibliography $*.bib 
-
-#	Quella cosa lì molto lunga dice in pratica: 
-# 	- se l'immagine è più larga della pagina, ridimensionala. però: 
-#	  rendi larghe quanto la pagina immagini la cui altezza è al
-#	  più .75 volte la loro altezza
-# 	- se l'immagine è piccola, lasciala tale.
+	--var=header-includes:'\frenchspacing' \
+	--var=header-includes:'\setkeys{Gin}{width=0.75\maxwidth}' \
+	--bibliography=$*.bib \
+	--latex-engine=xelatex --var=mainfont:'Myriad Pro'
 
 PIPE = > /dev/null
 
