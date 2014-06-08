@@ -1,6 +1,8 @@
 name: ~peppe 
 url: "http://peppelab.altervista.org"
 markdown: pandoc
+pandoc: 
+  extensions: [mathjax]
 markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
