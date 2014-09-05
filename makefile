@@ -18,7 +18,9 @@ kill:
 build:
 	jekyll build
 
-deploy: build
+deploy: build upload
+
+upload:
 	@echo "uploading... "
 	@ftpsync $(FTPOPTIONS) ./_site ftp://peppelab:$(FTPASSWORD)@peppelab.altervista.org// 
 
