@@ -13,7 +13,7 @@ all: kill
 	open 'http://0.0.0.0:4000'
 
 kill:
-	killall -9 '$(SERVE)' || true
+	killall -9 '$(SERVE)' || killall -9 ruby || true
 
 build:
 	jekyll build
