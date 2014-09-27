@@ -7,9 +7,9 @@ ul.nav li a:hover{
     background: transparent;
 }
 
-ul.nav li{
+/*ul.nav li{
     margin: 0.3ex auto;
-}
+}*/
 
 #nav ul.nav{
     margin: 2ex auto;
@@ -33,7 +33,7 @@ ul.nav > li li {
 
 @media (min-width:992px){
     ul.nav > li li {
-        font-size: 83%;
+        font-size: 90%;
     /* i link di secondo livello sono più piccoli
        solo se la sidebar sta di lato. */
     }
