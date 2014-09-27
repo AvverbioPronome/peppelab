@@ -29,6 +29,7 @@ ul.nav > li{
 ul.nav > li li {
     padding-left: 1em;
     list-style-type: square;
+    line-height: 1.4;
 }
 
 @media (min-width:992px){
