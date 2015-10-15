@@ -1,8 +1,9 @@
 name: ~peppe 
 url: "http://peppelab.altervista.org"
+gems: [jekyll-pandoc]
 markdown: pandoc
 pandoc: 
-  extensions: [mathjax]
+  extensions: [mathjax,smart,normalize]
 markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
