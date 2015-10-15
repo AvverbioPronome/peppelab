@@ -20,14 +20,17 @@ ul.nav > li ul {
     padding: 0;
 }
 
-ul.nav > li{
-    list-style-type: none;
-    list-style-position: inside;
+ul.nav > li, ul.nav > li li {
+    font-size: 120%;
     padding-left: 1em;
 }
 
+ul.nav > li{
+    list-style-type: none;
+    list-style-position: inside;
+}
+
 ul.nav > li li {
-    padding-left: 1em;
     list-style-type: square;
     line-height: 1.43;
 }
