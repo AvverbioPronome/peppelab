@@ -25,30 +25,37 @@ author:
   first_name: ''
   last_name: ''
 ---
-<p>Beh, ridicolo scrivere apertamente di essere spammoso, infatti non lo sono. Cercavo un modo rapido per creare un file csv con gli indirizzi email trovati in un blocco di testo informe e ho scritto questo pezzo di codice.<br />
-[php]<br />
-&lt;?php //Leggere i commenti per capire come funziona.<br />
-header(&quot;Content-Type: text/plain&quot;);<br />
-//il file manda output in text/plain, non ha senso usare html...<br />
-$origine=file_get_contents(&quot;email.txt&quot;);<br />
-//email.txt è il file, nella stessa directory dello script, che contiene la massa informe di testo da cui estrarre gli indirizzi.<br />
-$regexp=&quot;/[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i&quot;;<br />
-//l'espressione regolare di un indirizzo email...<br />
-$end=&quot;&quot;;<br />
-preg_match_all($regexp, $origine, $indirizzi);<br />
-//troviamo gli indirizzi.</p>
-<p>$unique=array_unique($indirizzi[0]);<br />
-//eliminiamo i doppioni<br />
-sort($unique);</p>
-<p>echo count($unique).&quot;\n&quot;;<br />
-//stampiamo il numero di indirizzi trovati...</p>
-<p>while(list(, $indirizzo)=each($unique)){<br />
-	$end .= strtolower($indirizzo) . &quot;\n&quot;;<br />
-	}; //la variabile $end contiene tutti gli indirizzi, uno per riga.</p>
-<p>	if(file_put_contents(&quot;contatti.csv&quot;, $end)) {<br />
-		echo &quot;OK, done. look at \&quot;contatti.csv\&quot;&quot;; };<br />
-//scrive $end nel file contatti.csv, che troverai<br />
-//nella stessa dir dello script<br />
-?&gt;[/php]<br />
-Dopo avere eseguito questo script (su sistemi unix basterà scrivere "php nomefile" in terminale, dopo aver commentato la prima riga "header...") troverai nella sua directory il file <tt>contatti.csv</tt> che contiene tutti gli indirizzi uno per riga.</p>
-<p><ins datetime="2009-09-29T19:58:25+00:00">Aggiungo: ovviamente la directory deve essere scrivibile dall'utente che esegue lo script da terminale, o da tutti se viene usato via apache.</ins></p>
+
+*(edit, 2015: questo programma è evidentemente scritto male. non fosse altro perché è in php e perché mantiene in memoria tutti i dati su cui sta lavorando. lo tengo qui per memoria storica.)*
+
+Beh, ridicolo scrivere apertamente di essere spammoso, infatti non lo sono. Cercavo un modo rapido per creare un file csv con gli indirizzi email trovati in un blocco di testo informe e ho scritto questo pezzo di codice.
+
+```php
+<?php //Leggere i commenti per capire come funziona.
+header("Content-Type: text/plain");
+//il file manda output in text/plain, non ha senso usare html...
+$origine=file_get_contents("email.txt");
+//email.txt è il file, nella stessa directory dello script, che contiene la massa informe di testo da cui estrarre gli indirizzi.
+$regexp="/[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i";
+//l'espressione regolare di un indirizzo email...
+$end="";
+preg_match_all($regexp, $origine, $indirizzi);
+//troviamo gli indirizzi.
+$unique=array_unique($indirizzi[0]);
+//eliminiamo i doppioni
+sort($unique);
+echo count($unique)."\n";
+//stampiamo il numero di indirizzi trovati...
+while(list(, $indirizzo)=each($unique)){
+	$end .= strtolower($indirizzo) . "\n";
+	}; //la variabile $end contiene tutti gli indirizzi, uno per riga.
+	if(file_put_contents("contatti.csv", $end)) {
+		echo "OK, done. look at \"contatti.csv\""; };
+//scrive $end nel file contatti.csv, che troverai
+//nella stessa dir dello script
+?>
+```
+
+Dopo avere eseguito questo script (su sistemi unix basterà scrivere "php nomefile" in terminale, dopo aver commentato la prima riga "header...") troverai nella sua directory il file `contatti.csv` che contiene tutti gli indirizzi uno per riga.
+
+<ins datetime="2009-09-29T19:58:25+00:00">Aggiungo: ovviamente la directory deve essere scrivibile dall'utente che esegue lo script da terminale, o da tutti se viene usato via apache.</ins>
