@@ -59,7 +59,10 @@ figcaption{
 }
 
 #content p, #content ul, #content ol, #content dl {
-    font-size: 110%;
+    font-size: 120%;
+}
+#content .footnotes{
+    font-size: 80%;
 }
 
 @media print{
