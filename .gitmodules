@@ -5,3 +5,7 @@
 	path = _sass/bootswatch
 	url = git@github.com:thomaspark/bootswatch.git
 	branch = gh-pages
+[submodule "_sass/bootstrap"]
+	path = _sass/bootstrap
+	url = git@github.com:twbs/bootstrap.git
+	branch = v4-dev
