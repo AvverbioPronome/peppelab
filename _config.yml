@@ -5,6 +5,8 @@ markdown: PandocProcessor
 pandoc: 
   extensions: [mathjax,smart,normalize]
   highlight-style: pygments
+sass:
+  style: compressed
 markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
