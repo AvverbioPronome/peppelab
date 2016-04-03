@@ -1,4 +1,4 @@
-SERVE = jekyll serve --detach
+SERVE = jekyll serve --detach --incremental
 
 
 ## always remember. you need to escape dollar signs. everywhere.
@@ -13,10 +13,10 @@ all: kill
 	open 'http://0.0.0.0:4000'
 
 kill:
-	killall -9 '$(SERVE)' || killall -9 ruby || true
+	killall -9 jekyll || true
 
 build:
-	jekyll build
+	jekyll build --incremental
 
 deploy: build upload
 

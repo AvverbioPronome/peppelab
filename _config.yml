@@ -1,10 +1,11 @@
 name: ~peppe 
 url: "http://peppelab.altervista.org"
 gems: [jekyll-pandoc]
-markdown: pandoc
+markdown: PandocProcessor
 pandoc: 
   extensions: [mathjax,smart,normalize]
+  highlight-style: pygments
 markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
-exclude: [deploy.sh, makefile]
+exclude: [makefile]
