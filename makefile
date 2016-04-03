@@ -13,7 +13,7 @@ all: kill
 	open 'http://0.0.0.0:4000'
 
 kill:
-	killall -9 jekyll || true
+	pkill -f jekyll || true
 
 build:
 	jekyll build --incremental
