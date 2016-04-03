@@ -1,0 +1,7 @@
+[submodule "_sass/bootstrap-sass"]
+	path = _sass/bootstrap-sass
+	url = git@github.com:twbs/bootstrap-sass.git
+[submodule "_sass/bootswatch"]
+	path = _sass/bootswatch
+	url = git@github.com:thomaspark/bootswatch.git
+	branch = gh-pages
