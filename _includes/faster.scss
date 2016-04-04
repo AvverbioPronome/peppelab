@@ -1,0 +1,42 @@
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/clearfix";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/mixins/grid";
+//@import "bootstrap/scss/normalize";
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: map-get($grid-breakpoints, lg);
+  @include make-container();
+}
+
+.row {
+  @include make-row();
+}
+
+@include media-breakpoint-up(md){ // ATTENZIONE.
+  #content {
+    @include make-col(9);
+  }
+
+  #nav {
+    @include make-col(3);
+    font-size: 0.95rem;
+    li li {
+      font-size: 0.85rem;
+    }
+  }
+
+  hr.sema{display:none;}
+}
+
+#nav{
+  a {text-decoration: none;}
+  li {margin-bottom: 0.2rem;  }
+  li li{
+    list-style-type: none;
+    margin-left: -1.2rem;}
+}
