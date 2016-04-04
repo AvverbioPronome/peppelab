@@ -14,7 +14,7 @@
 }
 
 figure{
-  margin: 1ex auto;
+  margin: 1rem auto;
   text-align: center;
   max-width: 100%;
 }
@@ -24,7 +24,7 @@ figure img {
 }
 
 figcaption{
-  font-size: small;
+  font-size: 0.80rem;
   font-style: italic;
 }
 
@@ -32,6 +32,6 @@ blockquote {
   border-left: 5px solid #eee;
   padding: 0 1.5rem;
 }
-// #content .footnotes{
-//     font-size: 80%;
-// }
+.footnotes{
+  font-size: 0.90rem;
+}
