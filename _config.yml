@@ -1,6 +1,8 @@
 name: ~peppe 
 url: "http://peppelab.altervista.org"
-gems: [jekyll-pandoc]
+gems:
+  - jekyll-pandoc
+  - jekyll-sitemap
 markdown: PandocProcessor
 pandoc: 
   extensions: [mathjax,smart,normalize]
@@ -11,6 +13,12 @@ markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
 exclude: [makefile]
+# Pages permalink
+defaults:
+  - scope:
+      type: "pages"
+    values:
+      permalink: /:path/:basename:output_ext
 collections:
   storiarte:
     output: true
