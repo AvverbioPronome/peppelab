@@ -1,2 +1,1 @@
-Sitemap: storiarte/sitemap.txt
 Sitemap: sitemap.xml
