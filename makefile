@@ -5,7 +5,7 @@ SERVE = jekyll serve --detach --incremental
 
 FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.org 2>&1 >/dev/null | sed 's/.*"\(.*\)"[^"]*$$/\1/')
 
-FTPOPTIONS = -q ignoremask='^\.|^a$$|^storiarte$$'
+FTPOPTIONS = -q ignoremask='^\.|^a$$'
 
 
 all: kill 

@@ -1,0 +1,3 @@
+<ul>
+{% for p in site.storiarte %}<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
+</ul>

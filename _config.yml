@@ -11,3 +11,8 @@ markdown_ext: markdown,md,text,html
 highlighter: pygments
 permalink: /blog/:year/:title.html
 exclude: [makefile]
+collections:
+  storiarte:
+    output: true
+    layout: default
+    permalink: /storiarte/:title.html
