@@ -1,13 +1,21 @@
 ---
 ---
 
+$funnyfont: Verdana, Arial, Helvetica, sans-serif;
+ 
 .storiarte{
   h1, h2, h3 {font-family: monospace;}
   h1 {color: #00f; padding-bottom: 1.5rem;}
   h2 {color: #03f; font-weight: normal; letter-spacing: 0.2em;}
   h3 {color: #f60; font-weight: normal; }
-  h4, h5, h6, p {font-family: Verdana, Arial, Helvetica, sans-serif;}
+  h4, h5, h6, p {font-family: $funnyfont;}
   h4 {color: #063; font-weight: lighter;}
   h5 {color: #900; font-weight: normal;}
   h6 {color: #1273a7;}
+  p.h7 {color: #906;}
+  h3:before{content: "_ "; font-family: $funnyfont;}
+  h4:before{content: "__ ";}
+  h5:before{content: "___ ";}
+  h6:before{content: "____ ";}
+  p.h7:before{content: "______ ";}
 }
