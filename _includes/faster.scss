@@ -4,8 +4,11 @@
 @import "bootstrap/scss/mixins/grid";
 //@import "bootstrap/scss/normalize";
 
-*, *:after, *:before {
+html{
   box-sizing: border-box;
+}
+*, *:after, *:before { 
+  box-sizing: inherit;
 }
 
 .container {
