@@ -3,7 +3,7 @@ layout: default
 ---
 <header>
 <h1>{{ page.title | markdownify | remove:'<p>' | remove:'</p>' }}</h1>
-<p><small><i><time datetime="{{ page.date | date:'%F' }}">{{ page.date | date: '%F' }}</time></i></small></p>
+<p><small><time datetime="{{ page.date | date:'%F' }}">{{ page.date | date: '%F' }}</time></small></p>
 </header>
 
 {{ content }}
