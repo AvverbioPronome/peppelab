@@ -38,8 +38,6 @@ html{
 
 #nav{
   a {text-decoration: none;}
-  li {margin-bottom: 0.2rem;  }
-  li li{
-    list-style-type: none;
-    margin-left: -1.2rem;}
+  li {margin-bottom: 0.2em; list-style-type: none;}
+  li li{margin-left: -1.2rem;}
 }
