@@ -57,3 +57,10 @@ body { // this should solve the "heavy rendering" issue on osx
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#content{
+    @extend .col-md-9;
+}
+#nav {
+    @extend .col-md-3;
+}
