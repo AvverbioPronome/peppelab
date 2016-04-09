@@ -22,4 +22,4 @@ defaults:
 collections:
   storiarte:
     output: true
-    permalink: /:collection/:title:output_ext
+    permalink: /:collection/:name:output_ext
