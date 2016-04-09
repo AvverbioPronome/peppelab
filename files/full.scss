@@ -18,8 +18,8 @@
 
 @import "bootstrap/scss/nav";
 
-@import url("/files/pygments.css");
-@import url("/files/typewriter.css");
+@import "pygments.css";
+@import "typewriter.css";
 
 .container{
   margin: 2rem auto;
@@ -27,7 +27,7 @@
 }
 
 @media print{
-  #nav{display: none;}
+  #sidebar{display: none;}
 }
 
 figure{
@@ -61,6 +61,6 @@ body { // this should solve the "heavy rendering" issue on osx
 #content{
     @extend .col-md-9;
 }
-#nav {
+#sidebar {
     @extend .col-md-3;
 }

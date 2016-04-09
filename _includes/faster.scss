@@ -25,7 +25,7 @@ html{
     @include make-col(9);
   }
 
-  #nav {
+  #sidebar {
     @include make-col(3);
     font-size: 0.95rem;
     li li {
@@ -36,7 +36,7 @@ html{
   hr.sema{display:none;}
 }
 
-#nav{
+#sidebar{
   a {text-decoration: none;}
   li {margin-bottom: 0.2em; list-style-type: none;}
   li li{margin-left: -1.2rem;}
