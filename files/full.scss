@@ -59,8 +59,8 @@ body { // this should solve the "heavy rendering" issue on osx
 }
 
 #content{
-    @extend .col-md-9;
+  @extend .col-md-9;
 }
 #sidebar {
-    @extend .col-md-3;
+  @extend .col-md-3;
 }
