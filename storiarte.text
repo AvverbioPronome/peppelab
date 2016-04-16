@@ -9,3 +9,45 @@ ho studiato durante il primo e il secondo anno delle scuole superiori.
 Non garantisco nulla. Ci sono errori. Sopratutto d'ortografia. 
 
 {% include storiarteside.text %}
+
+<script type="text/javascript">
+// Closure-wrapped for security.
+// https://stackoverflow.com/a/21198129/5822275
+(function () {
+    var anchorMap = {
+        "s1": "/storiarte/01-preistoria.html",
+        "s2": "/storiarte/02-mesopotamia.html",
+        "s3": "/storiarte/03-egizi.html",
+        "s5": "/storiarte/05-creta-micene.html",
+        "s6": "/storiarte/06-grecia-inizi-arcaica.html",
+        "s7": "/storiarte/07-grecia-ordine-dorico.html",
+        "s8": "/storiarte/08-grecia-ordine-ionico-corinzio.html",
+        "s9": "/storiarte/09-grecia-scultura.html",
+        "s10": "/storiarte/10-grecia-acropoli-atene.html",
+        "s11": "/storiarte/11-grecia-partenone-fidia.html",
+        "s12": "/storiarte/12-grecia-scultura-intimismo-ellenismo.html",
+        "s13": "/storiarte/13-etruschi-parte-prima.html",
+        "s14": "/storiarte/14-etruschi-pittura-scultura.html",
+        "s15": "/storiarte/15-romani-tecniche-costruttive.html",
+        "s16": "/storiarte/15-romani-tecniche-costruttive.html",
+        "s17": "/storiarte/17-romani-architettura.html",
+        "s18": "/storiarte/17-romani-architettura.html",
+        "s19": "/storiarte/19-pittura-romana.html",
+        "s20": "/storiarte/20-scultura-romana.html",
+        "s21": "/storiarte/21-fori-romani.html",
+        "s22": "/storiarte/22-arte-tardo-romana.html"
+    }
+    /*
+    * Best practice for extracting hashes:
+    * http://stackoverflow.com/a/10076097/151365
+    */
+    var hash = window.location.hash.substring(1);
+    if (hash) {
+        /*
+        * Best practice for javascript redirects: 
+        * http://stackoverflow.com/a/506004/151365
+        */
+        window.location.replace(anchorMap[hash]);
+    }
+})();
+</script>
