@@ -38,15 +38,15 @@ Non garantisco nulla. Ci sono errori. Sopratutto d'ortografia.
         "s22": "/storiarte/22-arte-tardo-romana.html"
     }
     /*
-    * Best practice for extracting hashes:
-    * http://stackoverflow.com/a/10076097/151365
-    */
+     * Best practice for extracting hashes:
+     * http://stackoverflow.com/a/10076097/151365
+     */
     var hash = window.location.hash.substring(1);
-    if (hash) {
+    if (hash in anchorMap) {
         /*
-        * Best practice for javascript redirects: 
-        * http://stackoverflow.com/a/506004/151365
-        */
+         * Best practice for javascript redirects: 
+         * http://stackoverflow.com/a/506004/151365
+         */
         window.location.replace(anchorMap[hash]);
     }
 })();
