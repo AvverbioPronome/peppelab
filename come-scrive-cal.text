@@ -104,31 +104,38 @@ Un miglioramento notevole viene ottenuto cambiando il cursore di default di emac
 
 ### Correttore ortografico
 
-*(NOTA BENE: questa cosa non funziona abbastanza da essere usata)*
+Una volta c'ho provato in modo tradizionale, con ispell o hunspell. Chiaramente, non ha funzionato. Però, alla fine ci sono riuscito.
 
-Ho anche provato a configurare un correttore ortografico per supportarmi nella scrittura in emacs. Pare che il migliore disponibile sia *hunspell*. L'interfaccia di emacs, `ispell.el` supporta hunspell, ed hunspell ha una modalità di compatibilità con *ispell*. 
+Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortografico di sistema, o anche a diversi altri. Il codice da mettere nel `.emacs è:
 
-Dopo innumerevoli ricerche ed ore perse a tentare di configurare il tutto, con nessun cane che si fosse degnato di scrivere della documentazione su cosa fossero i campi delle "tuple" (come si chiamano queste cose in elisp?) di `ispell-dictionary-alist`, una casuale ricerca google mi porta al sorgente di ispell.el, che si documenta abbastanza bene (sebbene sia poco comprensibile il significato stesso della documentazione, è da dire); cosa che mi consente finalmente di scrivere le poche righe necessarie in `.emacs`:
+`````elisp
+;; Spellcheck?
+(autoload 'wcheck-mode "wcheck-mode"
+  "Toggle wcheck-mode." t)
+(autoload 'wcheck-change-language "wcheck-mode"
+  "Switch wcheck-mode languages." t)
+(autoload 'wcheck-actions "wcheck-mode"
+  "Open actions menu." t)
+(autoload 'wcheck-jump-forward "wcheck-mode"
+  "Move point forward to next marked text area." t)
+(autoload 'wcheck-jump-backward "wcheck-mode"
+  "Move point backward to previous marked text area." t)
+(setq wcheck-language-data
+      '(("British English"
+         (program . "/opt/local/bin/enchant")
+         (args "-l" "-d" "british")
+         (action-program . "/opt/local/bin/enchant")
+         (action-args "-a" "-d" "british")
+         (action-parser . wcheck-parser-ispell-suggestions))
+        ("Italiano"
+         (program . "/opt/local/bin/enchant")
+         (args "-l" "-d" "it")
+         (action-program . "/opt/local/bin/enchant")
+         (action-args "-a" "-d" "it")
+         (action-parser . wcheck-parser-ispell-suggestions))))
 
-```elisp
-;; Ispell (really hunspell)
-(require 'ispell)
-(setq ispell-local-dictionary-alist
-  '(("italian"
-     "[A-Za-zàèéìòùÀÈÉÌÒÙ]" "[^A-Za-zàèéìòùÀÈÉÌÒÙ]" "[']" nil
-     ("-d" "/Applications/LibreOffice.app/Contents/share/extensions/dict-it/it_IT") "~list" utf-8)))
-(eval-after-load "ispell"
-  (progn
-    (setq ispell-dictionary "italian"
-          ispell-extra-args '("-a" "-i" "utf-8")
-          ispell-silently-savep t)))
-(setq-default ispell-program-name "hunspell")
-```
+(setq wcheck-language "Italiano"); defaultz
+`````
+[enchant]: http://www.abisource.com/projects/enchant/
 
-Imho il problema si trova da qualche parte fra huspell e gli affix file del dizionario italiano (che però in LibO funzionano, quindi non so davvero), in pratica, si impone di correggere il "quand" in "quand'è" rendendolo a sua volta un "quand'è," risultando con un testo contenente "quand'è'è."
-
-Spero che qualcuno più esperto di me risolva questo problema.
-
-## Cose da fare
-
-- creare il famoso repo dei dotfiles a forza di symlink.
+E dopo, `(add-hook 'text-mode-hook 'wcheck-mode)` in mezzo agli hook al paragrafo precedente.
