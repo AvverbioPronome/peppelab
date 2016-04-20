@@ -1,20 +1,20 @@
----
-layout: base
----
-<div class="row">
-  <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
+<!doctype html>
+<html>
+<head>
+   <title>{{ page.title }} [{{ site.name }}]</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <style>{% capture fastercss %}{% include faster.scss %}{% endcapture %}{{ fastercss | scssify }}</style>
+   <link rel="alternate" type="application/rss+xml" title="peppelab » blog" href="/feed.xml" />
+   <link rel="alternate" type="application/rss+xml" title="peppelab » discarica" href="/a/?type=atom10" />
+   {% include analytics.html %}
+</head>
+<body>
+  <div class="container">
 {{ content }}
-  </section>
-  <hr class="sema" />
-  <nav id="sidebar">
-    {% include sidebar.html %}
-    {% if page.collection == "storiarte" %}
-    <hr/>
-    <ul class="nav">
-      <li>StoriArte:
-        {% include storiarteside.text %}
-      </li>
-    </ul>
-    {% endif %}
-  </nav>
-</div>
+  </div>
+</body>
+<script async type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" href="/files/full.css" />
+</html>

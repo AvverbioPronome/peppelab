@@ -11,6 +11,7 @@ Non garantisco nulla. Ci sono errori. Sopratutto d'ortografia.
 {% include storiarteside.text %}
 
 <script type="text/javascript">
+// http://stackoverflow.com/a/21198129/5822275 (edited)
 // Closure-wrapped for security.
 // https://stackoverflow.com/a/21198129/5822275
 (function () {
