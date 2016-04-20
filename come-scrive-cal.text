@@ -139,8 +139,7 @@ Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortograf
 (setq wcheck-language-data-defaults
       '((read-or-skip-faces
          (text-mode read nil) ; normal text
-         (markdown-mode skip
-                        markdown-url-face)
+         (markdown-mode read nil)
          (latex-mode read
                      nil
                      font-latex-bold-face
