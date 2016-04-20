@@ -108,7 +108,7 @@ Una volta c'ho provato in modo tradizionale, con ispell o hunspell. Chiaramente,
 
 Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortografico di sistema, o anche a diversi altri. Il codice da mettere nel `.emacs è:
 
-`````elisp
+```elisp
 ;; Spellcheck?
 (autoload 'wcheck-mode "wcheck-mode"
   "Toggle wcheck-mode." t)
@@ -135,7 +135,7 @@ Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortograf
          (action-parser . wcheck-parser-ispell-suggestions))))
 
 (setq wcheck-language "Italiano"); defaultz
-`````
+```
 [enchant]: http://www.abisource.com/projects/enchant/
 
 E dopo, `(add-hook 'text-mode-hook 'wcheck-mode)` in mezzo agli hook al paragrafo precedente.
