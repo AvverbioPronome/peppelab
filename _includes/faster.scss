@@ -17,6 +17,13 @@ body {
   font-family: $font-family-sans-serif; 
 }
 
+a {
+  color: $link-color;
+  &:hover{
+    color: $link-hover-color;
+  }
+}
+
 .container {
   max-width: map-get($container-max-widths, lg);
   @include make-container();
