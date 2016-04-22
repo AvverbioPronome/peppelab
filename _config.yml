@@ -4,6 +4,7 @@ url: "http://peppelab.altervista.org"
 gems:
   - jekyll-pandoc
   - jekyll-sitemap
+  - octopress-minify-html
 
 markdown_ext: markdown,md,text,html
 markdown: PandocProcessor
