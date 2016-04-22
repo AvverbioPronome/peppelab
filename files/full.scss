@@ -12,7 +12,7 @@ layout: null
 @import "bootstrap/scss/mixins";
 
 // Reset and dependencies
-@import "bootstrap/scss/normalize";
+//@import "bootstrap/scss/normalize"; //moved to faster.scss
 @import "bootstrap/scss/print";
 
 // Core CSS
@@ -25,7 +25,7 @@ layout: null
 @import "bootstrap/scss/nav";
 
 @import "pygments";
-@import "typewriter";
+//@import "typewriter";
 
 .container{
   margin: 2rem auto;
