@@ -32,6 +32,15 @@ layout: null
   @include media-breakpoint-down(sm){margin: 2rem 1rem;};
 }
 
+@include media-breakpoint-up(md){
+  #sidebar {
+    font-size: .95rem;
+    li li{
+      font-size: .85rem; // this overwrites something in faster.css
+    }
+  }
+}
+
 @media print{
   #sidebar{display: none;}
 }

@@ -5,13 +5,20 @@
 
 html{
   box-sizing: border-box;
+  font-size: 16px;
 }
+
 *, *:after, *:before { 
   box-sizing: inherit;
 }
 
+body {
+  color: $body-color;
+  font-family: $font-family-sans-serif; 
+}
+
 .container {
-  max-width: map-get($grid-breakpoints, lg);
+  max-width: map-get($container-max-widths, lg);
   @include make-container();
 }
 
@@ -26,9 +33,9 @@ html{
 
   #sidebar {
     @include make-col(3);
-    font-size: 0.95rem;
+    font-size: 0.90rem;
     li li {
-      font-size: 0.85rem;
+      font-size: 0.76rem;
     }
   }
 
@@ -40,3 +47,5 @@ html{
   li {margin-bottom: 0.2em; list-style-type: none;}
   li li{margin-left: -1.2rem;}
 }
+
+#content{  line-height: 1.4;}
