@@ -39,6 +39,10 @@ layout: null
       font-size: .85rem; // this overwrites something in faster.css
     }
   }
+
+  #content dd{
+    margin-left: 2rem; // fuck bootstrap.
+  }
 }
 
 @media print{
