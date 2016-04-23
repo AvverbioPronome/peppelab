@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+# Circa questo sito
+
+Bla bla bla...
+
+## Privacy & cookie policy
+
+Questo sito usa Google Analytics, e nient'altro. Iubenda te lo dirà meglio: <a href="//www.iubenda.com/privacy-policy/7837039" class="iubenda-white iubenda-embed" title="Privacy Policy">Privacy Policy</a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+
+## Licenze open source
+
+Questo sito usa [Bootstrap](http://getbootstrap.com), &copy; Twitter, rilasciato sotto licenza MIT.
+
+```
+/*!
+ * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+```
+
+Bootstrap a sua volta include [normalize.css](https://github.com/necolas/normalize.css), rilasciato anch'esso sotto licenza MIT.
+
+```
+/*! normalize.css commit fe56763 | MIT License | github.com/necolas/normalize.css */
+```
+
+Sotto quale licenza è rilasciato il contenuto di questo sito, non lo so. Ci devo ancora pensare: questo significa che in questo momento è tutti i diritti riservati, ma se vuoi possiamo parlarne.
