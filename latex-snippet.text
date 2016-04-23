@@ -9,67 +9,38 @@ Snippet LaTeX
 Questo post sarà modificato spesso, serve a conservare snippet che
 voglio trovare subito, quando mi servono. Suggerimenti ben accetti.
 
-Un documento "vuoto"
---------------------
-
-```{.latex}
-\documentclass[11pt,a4paper]{article}
-\usepackage[italian]{babel} \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-\usepackage{microtype}
-\usepackage[hidelinks]{hyperref}
-\usepackage{booktabs}
-\usepackage{graphicx}
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-\author{Pinco Pallino \and Paolino Paperino}
-\title{Una relazione qualsiasi.}
-\date{\today}
-
-\begin{document}
-\maketitle
-\begin{abstract} % Abstract.
-\end{abstract}
-%\tableofcontents \listoffigures \listoftables %
-% questa riga finirà commentata prima di subito, se vuoi usare
-% l'abstract descrivendo il lavoro. % commentata per intero o anche a
-% pezzi. eventualmente, figures e tables si spostano in coda.
-
-\end{document}
-
-```
-
-Parti
------
-
-### Un'immagine.
-
-```{.latex}
-\begin{figure}[htpb]
-\centering\includegraphics[width=0.9\textwidth]{filename} \caption{
-\label{fig:}}
-\end{figure}
-
-```
-
-### Un'immagine ruotata sul lato lungo della pagina.
-
-```{.latex}
-\begin{sidewaysfigure}[p] % needs &quot;rotating&quot;
-\centering\includegraphics[height=0.9\textheight]{filename}
-\caption{ \label{fig:}}
-\end{sidewaysfigure}
-
-```
-
+(come è ben chiaro, questa pagina non viene aggiornata da tanto tempo. questo perché dopo un po' ti rendi conto che i modelli non servono.)
 
 Script utili
 ------------
 
 ### Trasformare un tsv in una tabella {#tabellatore}
+
+```{.python}
+#!/usr/bin/env python3
+# tab.py --
+# usage: ./tab.py [table.tsv]
+# Accepts input on stdin or filename on argv, gives output on stdout.
+
+import sys
+try:
+    f=open(sys.argv[1], 'r')
+except FileNotFoundError:
+    print("File not found: `{}'".format(sys.argv[1]),
+          file=sys.stderr)
+    exit(1) # anything != 0 means error.
+except IndexError:
+    f=sys.stdin
+
+import pandas as pd
+pd.read_table(f).to_latex(header=False, buf=sys.stdout)
+
+# NB: Questa cosa è molto elastica, se leggi la documentazione.
+# http://pandas.pydata.org/pandas-docs/stable/io.html
+# http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_latex.html
+```
+
+#### Vecchie edizioni
 
 Script parecchio artigianale che serve soltanto a fare un trova e
 sostituisci.
@@ -116,7 +87,7 @@ miglioramenti che si potrebbero apportarvi:
 Se hai come migliorarlo o hai implementato uno dei punti sopra,
 [scrivi](mailto:peppelab@altervista.org).
 
-Per ragioni storiche, la vecchia implementazione in php:
+Lla vecchia implementazione in php:
 
 `````php
 #! /usr/bin/php
@@ -131,3 +102,61 @@ echo $valori;
 ?>
 
 `````
+
+
+
+Un documento "vuoto"
+--------------------
+
+```{.latex}
+\documentclass[11pt,a4paper]{article}
+\usepackage[italian]{babel} \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\author{Pinco Pallino \and Paolino Paperino}
+\title{Una relazione qualsiasi.}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract} % Abstract.
+\end{abstract}
+%\tableofcontents \listoffigures \listoftables %
+% questa riga finirà commentata prima di subito, se vuoi usare
+% l'abstract descrivendo il lavoro. % commentata per intero o anche a
+% pezzi. eventualmente, figures e tables si spostano in coda.
+
+\end{document}
+
+```
+
+Parti
+-----
+
+### Un'immagine.
+
+```{.latex}
+\begin{figure}[htpb]
+\centering\includegraphics[width=0.9\textwidth]{filename}
+\caption{\label{fig:}}
+\end{figure}
+```
+
+### Un'immagine ruotata sul lato lungo della pagina.
+
+```{.latex}
+\begin{sidewaysfigure}[p] % needs "rotating"
+\centering\includegraphics[height=0.9\textheight]{filename}
+\caption{ \label{fig:}}
+\end{sidewaysfigure}
+```
+
+
