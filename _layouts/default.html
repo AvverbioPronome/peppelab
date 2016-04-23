@@ -5,7 +5,8 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <style>{% capture fastercss %}{% include faster.scss %}{% endcapture %}{{ fastercss | scssify | remove: "\n"}}</style>{% if page.collection == "storiarte" %}<style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | remove: "\n" }}</style>{% endif %}
+   <style>{% capture fastercss %}{% include faster.scss %}{% endcapture %}{{ fastercss | scssify | strip }}</style>
+   {% if page.collection == "storiarte" %}<style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>{% endif %}
    <noscript><link rel="stylesheet" href="/files/full.css" /></noscript>
    {% include cssloader.html %}
    {% include analytics.html %}
