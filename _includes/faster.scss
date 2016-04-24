@@ -8,7 +8,7 @@ html{
   font-size: 16px;
 }
 
-*, *:after, *:before { 
+*, *::after, *::before {
   box-sizing: inherit;
 }
 
@@ -42,9 +42,9 @@ a {
 
   #sidebar {
     @include make-col(3);
-    font-size: 0.90rem;
+    font-size: 0.95rem;
     li li {
-      font-size: 0.76rem;
+      font-size: 0.85rem;
     }
   }
 
@@ -52,9 +52,11 @@ a {
 }
 
 #sidebar{
+  ul.nav {padding: 0;} /* very much needed; otherwise, you'll
+   have to reduce font-size accross the whole #sidebar */
   a {text-decoration: none;}
-  li {margin-bottom: 0.2em; list-style-type: none;}
+  li {margin-bottom: 0.2em;list-style-type: none;}
   li li{margin-left: -1.2rem;}
 }
 
-#content{  line-height: 1.4;}
+#content{line-height: 1.4;}

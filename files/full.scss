@@ -33,13 +33,6 @@ layout: null
 }
 
 @include media-breakpoint-up(md){
-  #sidebar {
-    font-size: .95rem;
-    li li{
-      font-size: .85rem; // this overwrites something in faster.css
-    }
-  }
-
   #content dd{
     margin-left: 2rem; // fuck bootstrap.
   }
