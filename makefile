@@ -3,7 +3,7 @@ SERVE = jekyll serve --detach --incremental
 
 ## always remember. you need to escape dollar signs. everywhere.
 
-FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.org 2>&1 >/dev/null | sed 's/.*"\(.*\)"[^"]*$$/\1/')
+FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.org 2>&1 | grep "password" | sed 's/.*"\(.*\)"/\1/')
 
 FTPOPTIONS = -q ignoremask='^\.|^a$$'
 
