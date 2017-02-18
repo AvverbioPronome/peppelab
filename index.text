@@ -3,26 +3,24 @@ layout: default
 title: index
 ---
 
-# {{ site.name }}
-
 <!-- 
-## Mappa
+# Mappa
 -->
 
-## Ultime
+# Ultime
 
 (probabilmente molto vecchie. avrai più fortuna con [l'aggregatore](/a))
 
 {% for post in site.posts limit:5 %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date:'%F' }}){% endfor %}
 
-## Elsewhere
+# Elsewhere
 
 - [\@9peppe](https://twitter.com/9peppe)
 - [flavors.me/peppe](http://flavors.me/peppe)
 - [peppelab@altervista.org](mailto:peppelab@altervista.org)
 
-## About
+# About
 
 > «Penso una cosa e la dimentico prima di dirla, comincio a
 > parlare e visto che penso più velocemente di quanto parlo, dimentico

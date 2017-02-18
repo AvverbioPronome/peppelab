@@ -15,23 +15,25 @@
    <link rel="alternate" type="application/rss+xml" title="peppelab » discarica" href="/a/?type=atom10" />
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
-        {{ content }}
-      </section>
-      <hr class="sema" />
-      <nav id="sidebar">
-        {% include sidebar.html %}
-        {% if page.collection == "storiarte" %}
-        <hr/>
-        <ul class="nav">
-          <li>StoriArte:
-            {% include storiarteside.text %}
-          </li>
-        </ul>
-        {% endif %}
-      </nav>
+  {% include navbar.html %}
+    <div class="container">
+      <div class="row">
+        <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
+          {{ content }}
+        </section>
+        <hr class="sema" />
+        <nav id="sidebar">
+          {% include sidebar.html %}
+          {% if page.collection == "storiarte" %}
+          <hr/>
+          <ul class="nav">
+            <li>StoriArte:
+              {% include storiarteside.text %}
+            </li>
+          </ul>
+          {% endif %}
+        </nav>
+      </div>
     </div>
   </div>
   <script>loadStyleSheet('/files/full.css');</script>

@@ -2,8 +2,9 @@
 layout: null
 ---
 /*!
- * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -23,6 +24,11 @@ layout: null
 @import "bootstrap/scss/grid";
 
 @import "bootstrap/scss/nav";
+
+@import "bootstrap/scss/navbar";
+
+@import "bootstrap/scss/utilities/flex";
+@import "bootstrap/scss/utilities/background";
 
 @import "pygments";
 //@import "typewriter";
@@ -75,6 +81,9 @@ body { // this should solve the "heavy rendering" issue on osx
 }
 #sidebar {
   @extend .col-md-3;
+  ul.nav {
+    @extend .flex-column
+  }
 }
 
 iframe.iubenda-ibadge {
