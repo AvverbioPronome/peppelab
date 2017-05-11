@@ -1,0 +1,44 @@
+name: ~peppe
+url: "http://peppelab.altervista.org"
+
+gems:
+  - jekyll-pandoc
+  - jekyll-sitemap
+#  - octopress-minify-html
+
+markdown_ext: markdown,md,text,html
+markdown: PandocProcessor
+pandoc:
+  extensions: [mathjax,smart,normalize]
+
+sass:
+#  style: compressed
+
+exclude: [makefile]
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      permalink: /:path/:basename:output_ext
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /blog/:year/:title:output_ext
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "storiarte"
+    values:
+      permalink: /:collection/:name:output_ext
+      layout: "default"
+
+collections:
+  storiarte:
+    output: true
