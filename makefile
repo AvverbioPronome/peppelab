@@ -8,11 +8,12 @@ FTPOPTIONS = -q ignoremask='^\.|^a$$'
 ## _config-local disables any output compression, so compilation is
 ## much quicker
 
-all: kill 
+all: kill
 	jekyll serve --detach --incremental --config _config-local.yml
 	open 'http://0.0.0.0:4000'
 
 kill:
+	cp _sass/bootstrap/dist/js/bootstrap.min.js files/
 	pkill -f jekyll || true
 
 build: kill

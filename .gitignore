@@ -5,3 +5,4 @@ _site
 .DS_Store
 .jekyll-metadata
 .sass-cache
+files/bootstrap.min.js
