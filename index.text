@@ -9,7 +9,7 @@ title: index
 
 # Ultime
 
-(probabilmente molto vecchie. avrai più fortuna con [l'aggregatore](/a))
+(probabilmente molto vecchie.)
 
 {% for post in site.posts limit:5 %}
 - [{{ post.title }}]({{ post.url }}) ({{ post.date | date:'%F' }}){% endfor %}
