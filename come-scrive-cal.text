@@ -106,7 +106,7 @@ Un miglioramento notevole viene ottenuto cambiando il cursore di default di emac
 
 Una volta c'ho provato in modo tradizionale, con ispell o hunspell. Chiaramente, non ha funzionato. Però, alla fine ci sono riuscito.
 
-Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortografico di sistema, o anche a diversi altri. Il codice da mettere nel `.emacs è:
+Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortografico di sistema, o anche a diversi altri. Il codice da mettere nel `.emacs` è:
 
 ```elisp
 ;; Spellcheck?
