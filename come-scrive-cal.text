@@ -154,6 +154,9 @@ Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortograf
                       font-lock-comment-face
                       font-lock-string-face))))
 ```
+
+Dopo di che, ricorda questo comando: `M-x wcheck-change-language`, che serve a passare da una lingua all'altra, fra quelle in `wcheck-language-data` --- purtroppo questo non avviene automaticamente.
+
 [enchant]: http://www.abisource.com/projects/enchant/
 
 (un giorno proverò a descrivere cosa fa ogni pezzo di quella roba.)
