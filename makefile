@@ -25,3 +25,4 @@ upload: build
 
 push: upload
 	git push
+	git push gitlab
