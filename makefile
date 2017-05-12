@@ -9,7 +9,7 @@ FTPOPTIONS = -q ignoremask='^\.|^a$$'
 ## much quicker
 
 all: kill
-	jekyll serve --detach --incremental --config _config-local.yml
+	jekyll serve --detach --incremental
 	open 'http://0.0.0.0:4000'
 
 kill:
@@ -17,7 +17,7 @@ kill:
 	pkill -f jekyll || true
 
 build: kill
-	jekyll build --config _config.yml
+	jekyll build 
 
 upload: build
 	@echo "uploading... "
