@@ -4,7 +4,7 @@ url: "http://peppelab.altervista.org"
 gems:
   - jekyll-pandoc
   - jekyll-sitemap
-  - octopress-minify-html
+#  - octopress-minify-html
 
 markdown_ext: markdown,md,text,html
 markdown: PandocProcessor
@@ -12,7 +12,7 @@ pandoc:
   extensions: [mathjax,smart,normalize]
 
 sass:
-  style: compressed
+#  style: compressed
 
 exclude: [makefile]
 
