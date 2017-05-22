@@ -19,8 +19,8 @@
       <div class="row">
         <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
           {{ content }}
+          <hr class="sema" />
         </section>
-        <hr class="sema" />
         <nav id="sidebar">
           {% include sidebar.html %}
           {% if page.collection == "storiarte" %}
