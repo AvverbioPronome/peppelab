@@ -1,29 +1,12 @@
+@import "bootstrap/scss/functions";
+
 @import "variables";
 
 @import "bootstrap/scss/mixins";
-@import "bootstrap/scss/normalize";
+@import "bootstrap/scss/reboot";
 
 html{
-  box-sizing: border-box;
   font-size: 16px;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
-body {
-  color: $body-color;
-  font-family: $font-family-sans-serif; 
-}
-
-a {
-  color: $link-color;
-  text-decoration: $link-decoration;
-  &:hover{
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
-  }
 }
 
 .container {
