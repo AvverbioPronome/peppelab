@@ -9,7 +9,7 @@ plugins:
 markdown_ext: markdown,md,text,html
 markdown: Pandoc
 pandoc:
-  extensions: [mathjax,backtick_code_blocks]
+  extensions: [mathjax]
   highlighting-style: pygments
 
 sass:
