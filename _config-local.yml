@@ -1,5 +1,5 @@
 
-gems:
+plugins:
   - jekyll-pandoc
   - jekyll-sitemap
 

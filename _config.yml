@@ -1,15 +1,16 @@
 name: ~peppe
 url: "http://peppelab.altervista.org"
 
-gems:
+plugins:
   - jekyll-pandoc
   - jekyll-sitemap
   - octopress-minify-html
 
 markdown_ext: markdown,md,text,html
-markdown: PandocProcessor
+markdown: Pandoc
 pandoc:
-  extensions: [mathjax,smart,normalize]
+  extensions: [mathjax,backtick_code_blocks]
+  highlighting-style: pygments
 
 sass:
   style: compressed
