@@ -3,7 +3,6 @@ url: "http://peppelab.altervista.org"
 
 plugins:
   - jekyll-sitemap
-  - octopress-minify-html
 
 markdown_ext: markdown,md,text,html
 markdown: kramdown
