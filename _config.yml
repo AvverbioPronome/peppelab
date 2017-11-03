@@ -9,7 +9,7 @@ markdown: kramdown
 highlighter: rouge
 
 sass:
-  style: compressed
+  style: full
 
 exclude: [makefile]
 
