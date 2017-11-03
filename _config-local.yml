@@ -1,6 +1,4 @@
-
 plugins:
-  - jekyll-pandoc
   - jekyll-sitemap
 
 sass:
