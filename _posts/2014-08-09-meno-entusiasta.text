@@ -1,9 +1,9 @@
 ---
-layout: default
-title: Perché mi vedrete sempre meno entusiasta
+layout: post
+title: "Perché mi vedrete sempre meno entusiasta (del partito pirata)"
 ---
 
-# Perché mi vedrete sempre meno entusiasta (del partito pirata)
+<small>(la data è approssimativa, vedi [meta](#meta) a riguardo) </small>
 
 Mi sono stancato. Ci sono troppe cose che non vanno, troppe cose che non
 funzionano. Alcuni fra gli errori sotto descritti li ho fatti anche io,
@@ -179,7 +179,7 @@ Ciò implica tante cose diverse, la più grave delle quali è il conflitto inter
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-## Meta
+## Meta {#meta}
 
 Questo testo era stato scritto nel 2013 (agosto?) e pubblicato internamente, insieme ad altra roba, sul mio profilo in liquid.  Nel frattempo è forse stato aggiornato. La struttura di base non è purtroppo cambiata.
 
