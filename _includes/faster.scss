@@ -46,5 +46,8 @@ body{
   li li{margin-left: -1.2rem;}
 }
 
-#content{line-height: 1.4;}
-div.sourceLine {display: inline-block;}
+#content{
+  line-height: 1.4;
+  padding-left:15px;
+  padding-right:15px;
+}
