@@ -36,7 +36,6 @@
 
 .container{
   margin: 2rem auto;
-  @include media-breakpoint-down(sm){margin: 2rem 1rem;};
 }
 
 @include media-breakpoint-up(md){
