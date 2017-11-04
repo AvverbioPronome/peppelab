@@ -11,9 +11,7 @@
 
 // Core variables and mixins
 @import "bootstrap/scss/functions";
-
 @import "variables";
-@import "bootswatch/solar/variables";
 @import "bootstrap/scss/mixins";
 
 // Reset and dependencies
@@ -33,13 +31,12 @@
 @import "bootstrap/scss/utilities/flex";
 @import "bootstrap/scss/utilities/background";
 
-@import "bootswatch/solar/bootswatch";
-
 @import "github-highlighter";
 //@import "typewriter";
 
 .container{
   margin: 2rem auto;
+  @include media-breakpoint-down(sm){margin: 2rem 1rem;};
 }
 
 @include media-breakpoint-up(md){
