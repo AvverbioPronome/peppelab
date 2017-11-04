@@ -2,3 +2,6 @@
 	path = _sass/bootstrap
 	url = git@github.com:twbs/bootstrap.git
 	branch = v4-dev
+[submodule "_sass/bootswatch"]
+	path = _sass/bootswatch
+	url = https://github.com/thomaspark/bootswatch.git
