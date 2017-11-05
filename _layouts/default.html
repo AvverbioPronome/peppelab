@@ -9,7 +9,8 @@
    {% if page.collection == "storiarte" %}<style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>{% endif %}
    <noscript><link rel="stylesheet" href="/files/full.css" /></noscript>
    {% include cssloader.html %}
-   {% include analytics.html %}
+   {% if jekyll.environment == "production" %}
+     {% include analytics.html %}{% endif %}
    <meta property="fb:admins" content="1583284948" />
    <link rel="alternate" type="application/rss+xml" title="peppelab » blog" href="/feed.xml" />
 </head>

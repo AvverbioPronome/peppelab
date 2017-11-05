@@ -17,7 +17,7 @@ kill:
 	pkill -f jekyll || true
 
 build: kill
-	jekyll build --config _config.yml
+	JEKYLL_ENV=production jekyll build --config _config.yml
 
 upload: build
 	@echo "uploading... "
