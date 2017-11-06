@@ -1,6 +1,7 @@
 @import "colors";
 
-$primary:       lighten($blue, 10%);
+//$primary: lighten($blue, 10%);
+$primary: darken(desaturate($blue, 50%), 15%); // This is fine.
 
 /* $secondary:     $gray-600 !default; */
 /* $success:       $green !default; */
@@ -12,8 +13,13 @@ $primary:       lighten($blue, 10%);
 
 
 // Be careful. Theme colors need to be redefined *BEFORE* importing 
-// Bootstrap's own _variables.scss. 
-
-$body-color:    $gray-800 ;
+// Bootstrap's own _variables.scss.
+//
+// And yet, many colors are not yet available.
 
 @import "bootstrap/scss/variables";
+
+$body-color:    $gray-800 ;
+//$link-hover-color: lighten($link-color, 10%);
+
+$font-family-base: Helvetica, "Helvetica Neue", Arial, $font-family-sans-serif;
