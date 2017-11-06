@@ -64,7 +64,7 @@ figcaption{
 }
 
 blockquote {
-  border-left: 5px solid #eee;
+  border-left: 5px solid lighten($body-color, 65%);
   padding: 0 1.5rem;
 }
 .footnotes{
