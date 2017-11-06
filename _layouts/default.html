@@ -37,21 +37,16 @@
     </div>
   </div>
   <script>loadStyleSheet('/files/full.css');</script>
-  <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script async type="text/javascript" src="/files/bootstrap.min.js"></script>
+ {% comment %} <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async type="text/javascript" src="/files/bootstrap.min.js"></script>{% endcomment %}
   <script type="text/x-mathjax-config">
    MathJax.Hub.Config({
        tex2jax: {
            inlineMath: [ ['$','$'] ],
            displayMath: [ ['$$','$$'] ],
            processEscapes: true
-       },
-       jax: ["input/TeX","output/CommonHTML"],
-       extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "AssistiveMML.js", "a11y/accessibility-menu.js","fast-preview.js"],
-       TeX: {
-           extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
        }
    });</script>
-  <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+  <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
 </body>
 </html>
