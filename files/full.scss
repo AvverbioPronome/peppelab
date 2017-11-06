@@ -81,7 +81,7 @@ body { // this should solve the "heavy rendering" issue on osx
 }
 #sidebar {
   @extend .col-md-3;
-  ul.nav {
+  &> ul {
     @extend .flex-column
   }
 }

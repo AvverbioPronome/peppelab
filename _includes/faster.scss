@@ -39,7 +39,7 @@ body{
 }
 
 #sidebar{
-  ul.nav {padding: 0;} /* very much needed; otherwise, you'll
+  & > ul {padding: 0;} /* very much needed; otherwise, you'll
    have to reduce font-size accross the whole #sidebar */
   a {text-decoration: none;}
   li {margin-bottom: 0.2em;list-style-type: none;}
