@@ -6,7 +6,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <style>{% capture fastercss %}{% include faster.scss %}{% endcapture %}{{ fastercss | scssify | strip }}</style>
-   {% if page.collection == "storiarte" %}<style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>{% endif %}
+   {% if page.collection == "storiarte" %}
+   <style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>
+   {% endif %}
    <noscript><link rel="stylesheet" href="/files/full.css" /></noscript>
    {% include cssloader.html %}
    {% if jekyll.environment == "production" %}
@@ -15,7 +17,7 @@
    <link rel="alternate" type="application/rss+xml" title="peppelab » blog" href="/feed.xml" />
 </head>
 <body>
-  {% comment %} {% include navbar.html %}{% endcomment %}
+  {% comment %}{% include navbar.html %}{% endcomment %}
     <div class="container">
       <div class="row">
         <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
@@ -24,20 +26,12 @@
         </section>
         <nav id="sidebar">
           {% include sidebar.html %}
-          {% if page.collection == "storiarte" %}
-          <hr/>
-          <ul>
-            <li>StoriArte:
-              {% include storiarteside.text %}
-            </li>
-          </ul>
-          {% endif %}
         </nav>
       </div>
     </div>
   </div>
   <script>loadStyleSheet('/files/full.css');</script>
- {% comment %} <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ {% comment %}<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script async type="text/javascript" src="/files/bootstrap.min.js"></script>{% endcomment %}
   <script type="text/x-mathjax-config">
    MathJax.Hub.Config({

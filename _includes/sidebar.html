@@ -1,20 +1,28 @@
 <ul>
-    <li><a href="/">Home</a>
-        <ul>
-            <li><a href="/about.html">About, licenze, policy</a></li>
-        </ul>
-    </li>
-    <li>Appunti
-        <ul>
-            <li><a href="/come-scrive-cal.html">Il modo in cui Cal scrive</a></li>
-            <li><a href="/latex-snippet.html">Snippet LaTeX</a></li>
-            <li><a href="/storiarte.html">StoriArte</a></li>
-        </ul>
-    </li>
-    <li><a href="/blog/">Blog archives</a></li>
-    <li>Pirata
-        <ul>
-          <li><a href="/pirata/liquid-feedback.html">Critica di LiquidFeedback</a></li>
-        </ul>
-    </li>
+  <li><a href="/">Home</a>
+    <ul>
+      <li><a href="/about.html">About, licenze, policy</a></li>
+    </ul>
+  </li>
+  <li>Appunti
+    <ul>
+      <li><a href="/come-scrive-cal.html">Il modo in cui Cal scrive</a></li>
+      <li><a href="/latex-snippet.html">Snippet LaTeX</a></li>
+      <li><a href="/storiarte.html">StoriArte</a></li>
+    </ul>
+  </li>
+  <li><a href="/blog/">Blog archives</a></li>
+  <li>Pirata
+    <ul>
+      <li><a href="/pirata/liquid-feedback.html">Critica di LiquidFeedback</a></li>
+    </ul>
+  </li>
 </ul>
+{% if page.collection == "storiarte" %}
+<hr/>
+<ul>
+  <li>StoriArte:
+    {% include storiarteside.text %}
+  </li>
+</ul>
+{% endif %}
