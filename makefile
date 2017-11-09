@@ -16,7 +16,10 @@ kill:
 	cp _sass/bootstrap/dist/js/bootstrap.min.js files/
 	pkill -f jekyll || true
 
-build: kill
+clean:
+	jekyll clean
+
+build: kill clean
 	JEKYLL_ENV=production jekyll build --config _config.yml
 
 upload: build
