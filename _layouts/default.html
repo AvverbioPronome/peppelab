@@ -18,16 +18,15 @@
 </head>
 <body>
   {% comment %}{% include navbar.html %}{% endcomment %}
-    <div class="container">
-      <div class="row">
-        <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
-          {{ content }}
-          <hr class="sema" />
-        </section>
-        <nav id="sidebar">
-          {% include sidebar.html %}
-        </nav>
-      </div>
+  <div class="container">
+    <div class="row">
+      <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
+        {{ content }}
+        <hr class="sema" />
+      </section>
+      <nav id="sidebar">
+        {% include sidebar.html %}
+      </nav>
     </div>
   </div>
   <script>loadStyleSheet('/files/full.css');</script>
@@ -42,5 +41,6 @@
        }
    });</script>
   <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
+  <noscript><p><img src="//peppelab.altervista.org/a/piwik/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
 </body>
 </html>
