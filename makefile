@@ -24,5 +24,5 @@ upload: build
 	@ftpsync $(FTPOPTIONS) ./_site ftp://peppelab:$(FTPASSWORD)@ftp.peppelab.altervista.org// 
 
 push: upload
-	git push
+	git push github
 	git push gitlab
