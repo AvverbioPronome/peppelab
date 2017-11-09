@@ -5,8 +5,7 @@ FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.or
 FTPOPTIONS = -q ignoremask='^\.|^a$$'
 
 all: kill
-	jekyll serve --detach --incremental
-	open 'http://0.0.0.0:4000'
+	jekyll serve --detach --incremental --open-url
 
 kill:
 	cp _sass/bootstrap/dist/js/bootstrap.min.js files/
