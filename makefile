@@ -4,10 +4,6 @@ FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.or
 
 FTPOPTIONS = -q ignoremask='^\.|^a$$'
 
-## The difference between _config and _config-local is one:
-## _config-local disables any output compression, so compilation is
-## much quicker
-
 all: kill
 	jekyll serve --detach --incremental
 	open 'http://0.0.0.0:4000'
