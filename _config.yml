@@ -8,6 +8,9 @@ markdown_ext: markdown,md,text,html
 markdown: kramdown
 highlighter: rouge
 
+kramdown:
+  math_engine: null
+
 sass:
   style: full
 
