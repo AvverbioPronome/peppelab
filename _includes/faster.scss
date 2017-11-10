@@ -52,4 +52,10 @@ body{
 #content, #sidebar {
   padding-left: ($grid-gutter-width / 2);
   padding-right: ($grid-gutter-width / 2);
-}  
+}
+
+.underline{
+  // usually used as em.underline, but avoiding overly restrictive selector
+  font-style:unset; 
+  text-decoration:underline;
+}

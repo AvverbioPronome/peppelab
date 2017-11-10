@@ -30,13 +30,13 @@ LiquidFeedback usa contemporaneamente il metodo Schulze e sistemi multipli di sb
 
 Il metodo Schulze è un metodo di Condorcet,[^2] in quanto tale restituisce un ordinamento di preferenza confrontando i candidati a coppie. Nell'insieme di proposte, liquidfeedback inserisce una proposta fantasma rappresentante lo status quo, per separare le proposte approvate dal votante (verdi) e quelle invece respinte (rosse).
 
-Regolamenti, statuti e leggi dei suoi utenti possono imporre che determinate decisioni vengano prese con determinate maggioranze; *lo Schulze ranking dei candidati non viene però influenzato da ciò*, essendo il vincitore definito come il candidato col ranking più alto fra quelli *eligible*. Ci sono [diversi modi][supdocs] ([principles], §4.12.3) per imporre questa cosa:
+Regolamenti, statuti e leggi dei suoi utenti possono imporre che determinate decisioni vengano prese con determinate maggioranze; <em class="underline">*lo Schulze ranking dei candidati non viene però influenzato da ciò*, essendo il vincitore definito come il candidato col ranking più alto fra quelli *eligible*</em>. Ci sono [diversi criteri di eleggibilità][supdocs] ([principles], §4.12.3) per imporre questa cosa:
 
 maggioranza qualificata diretta
-: possiamo imporre che la proposta $A$ avrà bisogno di essere preferita allo status quo $SQ$ di almeno $M_2$ volte le preferenze contrarie per essere considerata *eligible*, ovvero  $n_{A,SQ} > M_2 \cdot  n_{SQ,A}$. Questo metodo è descritto da Schulze stesso nel §7 del suo [paper].
+: impone che la proposta $A$ abbia bisogno di essere preferita allo status quo $SQ$ almeno $M_2$ volte le preferenze contrarie, ovvero  $n_{A,SQ} > M_2 \cdot  n_{SQ,A}$. Questo metodo è descritto da Schulze stesso nel §7 del suo [paper].
 
 maggioranza qualificata attraverso beat-path
-: imponiamo che le proposte *eligible* sconfiggano lo status quo attraverso un percorso sul quale ognuno dei rami gode di una maggioranza qualificata definita come sopra. (liquid consente di scegliere questa maggioranza indipendentemente dalla precedente).
+: impone che le proposte *eligible* sconfiggano lo status quo attraverso un percorso sul quale ognuno dei rami gode di una maggioranza qualificata definita come sopra. (liquid consente di scegliere questa maggioranza indipendentemente dalla precedente).
 
 impedisci reverse beat-paths
 : se non esiste vincitore di Condorcet, e lo status quo fa parte delle proposte legate nel loop[^3] (anche attraverso un pareggio), lo status quo vince sempre.
@@ -46,7 +46,7 @@ previeni maggioranze multistadio
 
 Ognuna di queste soluzioni introduce problemi nuovi, per questo motivo, liquid feedback le rende configurabili. La terza, sui reverse beat-path, è fortemente sconsigliata nelle [note di rilascio di liquidfeedback 3.0.1][ann3] perché consente voto tattico a favore dello status quo, da parte di anche piccole minoranze.
 
-L'inserimento delle percentuali di approvazione rende liquid feedback un software di voto che usa *contemporaneamente* il metodo Schulze ed approval voting. Questo fatto non è chiaro alla maggior parte dei suoi utenti. Aumentare le "direct majority" richieste oltre lo zero[^4] ottiene come effetto collaterale la defenestrazione di Schulze—o almeno di Condorcet, dato che l'approvazione passa gradualmente più alle percentuali rispetto allo status quo che al confronto a coppie di Condorcet. (Gli sviluppatori, in [principles] §4.13, sono molto espliciti nello scoraggiare l'uso di maggioranze qualificate come strumento di protezione delle minoranze.)
+L'inserimento delle percentuali di approvazione rende liquid feedback un software di voto che usa *contemporaneamente* il metodo Schulze ed approval voting. Questo fatto non è chiaro alla maggior parte dei suoi utenti. Aumentare le "direct majority" richieste oltre lo zero[^4] ottiene come effetto collaterale la defenestrazione di Schulze—o almeno di Condorcet, dato che l'approvazione passa gradualmente più alle percentuali rispetto allo status quo che al confronto a coppie di Condorcet. *(Gli sviluppatori, in [principles] §4.13, sono molto espliciti nello scoraggiare l'uso di maggioranze qualificate come strumento di protezione delle minoranze.)*
 
 [supdocs]: http://dev.liquidfeedback.org/trac/lf/wiki/SupermajorityRequirements "poco comprensibile documentazione, sulla wiki di lqfb"
 [moarsup]: http://dev.liquidfeedback.org/pipermail/main/2012-September/000205.html
