@@ -8,7 +8,6 @@ all: kill
 	jekyll serve --detach --incremental --open-url
 
 kill:
-	cp _sass/bootstrap/dist/js/bootstrap.min.js files/
 	pkill -f jekyll || true
 
 clean:
