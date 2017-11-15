@@ -22,11 +22,21 @@ body{
   @include make-row();
 }
 
+@mixin onecol-fakehr {
+  border-top: $hr-border-width solid $hr-border-color;
+  padding-top: 1em;
+}
+
 #content, #sidebar {
   @include make-col-ready();
 }
 
+#sidebar {
+  @include onecol-fakehr();
+}
+
 @include media-breakpoint-up(md){ // ATTENZIONE.
+  #content, #sidebar {border: none; padding:0;}
   #content {
     @include make-col(9);
   }
@@ -38,8 +48,6 @@ body{
       font-size: 0.85rem;
     }
   }
-
-  hr.sema{display:none;}
 }
 
 #sidebar{
@@ -60,9 +68,7 @@ body{
   }
   #content, #sidebar{
     @include make-col(12);
-
-    border-top: $hr-border-width solid $hr-border-color;
-    padding-top: 1em;
+    @include onecol-fakehr();
   }
 
 }
