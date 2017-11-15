@@ -6,23 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <style>{% capture fastercss %}{% include faster.scss %}{% endcapture %}{{ fastercss | scssify | strip }}</style>
-    {% if page.collection == "storiarte" %}
-    <style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>
-    {% endif %}
+    {% if page.collection == "storiarte" %}<style>{% capture storiartecss %}@import "typewriter";{% endcapture %}{{ storiartecss | scssify | strip }}</style>{% endif %}
     <noscript><link rel="stylesheet" href="/files/full.css" /></noscript>
     {% include cssloader.html %}
-    {% if jekyll.environment == "production" %}
-    {% include analytics.html %}{% endif %}
+    {% if jekyll.environment == "production" %}{% include analytics.html %}{% endif %}
     <link rel="alternate" type="application/rss+xml" title="peppelab » blog" href="/feed.xml" />
   </head>
   <body>
-    {% comment %}{% include navbar.html %}{% endcomment %}
     <div class="container">
+      {% comment %}{% include navbar.html %}{% endcomment %}
       <div class="row">
-        <section id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
+        <main id="content"{% if page.collection %} class="{{ page.collection }}"{% endif %}>
           {{ content }}
-          <hr class="sema" />
-        </section>
+        </main>
+        <hr class="sema" />
         <nav id="sidebar">
           {% include sidebar.html %}
         </nav>
@@ -32,15 +29,15 @@
     {% comment %}<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>{% endcomment %}
-  <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({
-       tex2jax: {
-           inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
-           displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
-           processEscapes: true
-       }
-   });</script>
-  <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_SVG"></script>
-  <noscript><p><img src="//peppelab.altervista.org/a/piwik/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
-</body>
+    <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         tex2jax: {
+             inlineMath: [ ['$','$'], ['\\(', '\\)'] ],
+             displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+             processEscapes: true
+         }
+     });</script>
+    <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_SVG"></script>
+    {% if jekyll.environment == "production" %}<noscript><p><img src="//peppelab.altervista.org/a/piwik/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>{% endif %}
+  </body>
 </html>
