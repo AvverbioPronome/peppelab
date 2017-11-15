@@ -24,6 +24,10 @@
 @import "bootstrap/scss/code";
 @import "bootstrap/scss/grid";
 
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/utilities/text";
+@import "bootstrap/scss/utilities/float";
+
 @import "bootstrap/scss/nav";
 
 @import "bootstrap/scss/navbar";
@@ -64,7 +68,7 @@ figcaption{
 }
 
 blockquote {
-  border-left: 5px solid lighten($body-color, 65%);
+  border-left: 5px solid color("secondary");
   padding: 0 1.5rem;
 }
 .footnotes{
@@ -76,14 +80,8 @@ body { // this should solve the "heavy rendering" issue on osx
   -moz-osx-font-smoothing: grayscale;
 }
 
-#content{
-  @extend .col-md-9;
-}
-#sidebar {
-  @extend .col-md-3;
-  &> ul {
-    @extend .flex-column
-  }
+#sidebar > ul {
+  @extend .flex-column
 }
 
 iframe.iubenda-ibadge {
@@ -94,3 +92,5 @@ iframe.iubenda-ibadge {
 h2, .h2, h3, .h3 {
   margin-top: 1em; /* this uses a relative unit on purpose */
 }
+
+{% include faster.scss %} //do not allow full.css to override faster.css

@@ -26,7 +26,6 @@ body{
   @include make-col-ready();
 }
 
-
 @include media-breakpoint-up(md){ // ATTENZIONE.
   #content {
     @include make-col(9);
@@ -53,6 +52,19 @@ body{
 
 #content{
   line-height: 1.4;
+}
+
+.layout-onecol { // CSS overrides for a single-column layout
+  .container {
+    max-width: map-get($container-max-widths, md);
+  }
+  #content, #sidebar{
+    @include make-col(12);
+
+    border-top: $hr-border-width solid $hr-border-color;
+    padding-top: 1em;
+  }
+
 }
 
 .underline{
