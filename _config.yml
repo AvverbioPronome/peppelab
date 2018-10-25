@@ -1,7 +1,7 @@
 name: ~peppe
 url: "http://peppelab.altervista.org"
 
-plugins:
+plugins_dir:
   - jekyll-sitemap
 
 markdown_ext: markdown,md,text,html
@@ -14,7 +14,7 @@ kramdown:
 sass:
   style: full
 
-exclude: [makefile]
+exclude: [makefile,lftp.script]
 
 defaults:
   -

@@ -4,11 +4,8 @@ FTPASSWORD := $(shell security find-internet-password -gs peppelab.altervista.or
 
 FTPOPTIONS = -q ignoremask='^\.|^a$$'
 
-all: kill
+all: 
 	jekyll serve --detach --incremental --open-url
-
-kill:
-	pkill -f jekyll || true
 
 clean:
 	jekyll clean
