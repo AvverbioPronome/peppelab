@@ -35,8 +35,7 @@ Il makefile, per il quale si ringraziano varie persone trovate prima o poi su go
 ```makefile
 PANDOC = pandoc
 
-PANVARS = --var=papersize:a4paper \
-	--var=lang:italian 
+PANVARS = --var=papersize:a4 --var=lang:it-IT 
 
 FILES = $(patsubst %.text,%.pdf,$(wildcard *.text))
 
@@ -55,8 +54,7 @@ Ci potrebbero essere modifiche per supportare una bibliografia o inserire altra 
 ```makefile
 PANDOC = @pandoc
 
-PANVARS = --var=papersize:a4paper \
-	--var=lang:italian \
+PANVARS = --var=papersize:a4 --var=lang:it-IT \
 	--var=header-includes:'\frenchspacing' \
 	--var=header-includes:'\setkeys{Gin}{width=0.75\maxwidth}' \
 	--bibliography=$*.bib \
@@ -102,63 +100,4 @@ Un miglioramento notevole viene ottenuto cambiando il cursore di default di emac
 (add-hook 'text-mode-hook 'variable-pitch-mode); font proporzionale
 ```
 
-### Correttore ortografico
-
-Una volta c'ho provato in modo tradizionale, con ispell o hunspell. Chiaramente, non ha funzionato. Però, alla fine ci sono riuscito.
-
-Installando [`enchant`][enchant], che riesce a collegarsi al correttore ortografico di sistema, o anche a diversi altri. Il codice da mettere nel `.emacs` è:
-
-```elisp
-;; Spellcheck?
-(autoload 'wcheck-mode "wcheck-mode"
-  "Toggle wcheck-mode." t)
-(autoload 'wcheck-change-language "wcheck-mode"
-  "Switch wcheck-mode languages." t)
-(autoload 'wcheck-actions "wcheck-mode"
-  "Open actions menu." t)
-(autoload 'wcheck-jump-forward "wcheck-mode"
-  "Move point forward to next marked text area." t)
-(autoload 'wcheck-jump-backward "wcheck-mode"
-  "Move point backward to previous marked text area." t)
-(setq wcheck-language-data
-      '(("British English"
-         (program . "/opt/local/bin/enchant")
-         (args "-l" "-d" "british")
-         (action-program . "/opt/local/bin/enchant")
-         (action-args "-a" "-d" "british")
-         (action-parser . wcheck-parser-ispell-suggestions))
-        ("Italiano"
-         (program . "/opt/local/bin/enchant")
-         (args "-l" "-d" "it")
-         (action-program . "/opt/local/bin/enchant")
-         (action-args "-a" "-d" "it")
-         (action-parser . wcheck-parser-ispell-suggestions))))
-
-(setq wcheck-language "Italiano"); defaultz
-
-(setq wcheck-language-data-defaults
-      '((read-or-skip-faces
-         (text-mode read nil) ; normal text
-         (markdown-mode read nil)
-         (latex-mode read
-                     nil
-                     font-latex-bold-face
-                     font-latex-italic-face
-                     font-latex-slide-title-face
-                     font-lock-type-face
-                     font-lock-function-name-face)
-         (prog-mode read
-                    font-lock-comment-face
-                    font-lock-string-face)
-         (python-mode read
-                      font-lock-comment-face
-                      font-lock-string-face))))
-```
-
-Dopo di che, ricorda questo comando: `M-x wcheck-change-language`, che serve a passare da una lingua all'altra, fra quelle in `wcheck-language-data` --- purtroppo questo non avviene automaticamente.
-
-[enchant]: http://www.abisource.com/projects/enchant/
-
-(un giorno proverò a descrivere cosa fa ogni pezzo di quella roba.)
-
-E dopo, `(add-hook 'text-mode-hook 'wcheck-mode)` in mezzo agli hook al paragrafo precedente.
+*Qui una volta c'era una descrizione di come configurare il correttore automatico con Emacs. Era poco utile e un sacco complicata, oltre che probabilmente ormai rotta.*
