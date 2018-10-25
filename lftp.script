@@ -1,0 +1,3 @@
+set ssl:check-hostname no
+open -p21 ftp.peppelab.altervista.org
+mirror -c -e -x "^\." -x "^a/.*" -R _site . 

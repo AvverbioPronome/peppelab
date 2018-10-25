@@ -13,12 +13,11 @@ kill:
 clean:
 	jekyll clean
 
-build: kill clean
+build:  clean
 	JEKYLL_ENV=production jekyll build
 
 upload: build
-	@echo "uploading... "
-	@ftpsync $(FTPOPTIONS) ./_site ftp://peppelab:$(FTPASSWORD)@ftp.peppelab.altervista.org// 
+	lftp -f lftp.script
 
 push: upload
 	git push github
