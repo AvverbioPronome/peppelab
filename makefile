@@ -17,8 +17,15 @@ build: clean
 	JEKYLL_ENV=production jekyll build
 
 upload: build
-	lftp -f lftp.script
+	lftp -f lftp.script && make purge_cache
 
 push: upload
 	git push github
 	git push gitlab
+
+purge_cache:
+	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_PEPPELAB_ZONEID}/purge_cache" \
+	-H "X-Auth-Email: peppelab@altervista.org" \
+	-H "X-Auth-Key: ${CF_PEPPELAB_APIKEY}" \
+	-H "Content-Type:application/json" \
+	--data '{"purge_everything":true}'
