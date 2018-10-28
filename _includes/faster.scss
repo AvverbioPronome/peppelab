@@ -36,7 +36,9 @@ body{
 }
 
 @include media-breakpoint-up(md){ // ATTENZIONE.
-  #content, #sidebar {border: none; padding:0;}
+  #content, #sidebar {
+    border: none;
+  }
   #content {
     @include make-col(9);
   }
