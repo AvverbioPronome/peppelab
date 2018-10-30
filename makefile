@@ -22,6 +22,7 @@ upload: build
 push: upload
 	git push github
 	git push gitlab
+	git push bitbucket
 
 purge_cache:
 	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_PEPPELAB_ZONEID}/purge_cache" \
