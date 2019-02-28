@@ -6,7 +6,7 @@
 @import "bootstrap/scss/reboot";
 
 html{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 body{
@@ -45,9 +45,10 @@ body{
 
   #sidebar {
     @include make-col(3);
-    font-size: 0.95rem;
+    //font-size: 0.95rem;
     li li {
-      font-size: 0.85rem;
+      //font-size: 0.85rem;
+      font-size: 0.95rem;
     }
   }
 }
