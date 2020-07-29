@@ -1,7 +1,9 @@
 ## always remember. you need to escape dollar signs. everywhere.
 
 all: kill
-	docker-compose up -d && xdg-open "http://localhost:4000"
+	docker-compose run builder
+	docker-compose up -d
+	2>/dev/null xdg-open "http://localhost:4000"
 
 clean: kill
 	docker-compose run builder jekyll clean
