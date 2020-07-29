@@ -1,7 +1,7 @@
 name: ~peppe
 url: "http://peppelab.altervista.org"
 
-plugins_dir:
+plugins:
   - jekyll-sitemap
 
 markdown_ext: markdown,md,text,html

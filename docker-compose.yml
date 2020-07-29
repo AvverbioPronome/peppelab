@@ -1,0 +1,24 @@
+# docker run --rm \
+#   --volume="$PWD:/srv/jekyll" \
+#   -it jekyll/jekyll:$JEKYLL_VERSION \
+#   bundle update
+
+
+version: '3'
+services:
+  builder:
+    image: jekyll/jekyll
+    volumes:
+      - "./:/srv/jekyll"
+    command: |
+      sh -c "bundle update && jekyll build"
+
+  server:
+    image: sebp/lighttpd
+    tty: true
+    volumes:
+      - "./_site:/var/www/localhost/htdocs:ro"
+    ports:
+      - "4000:80"
+    depends_on:
+      - builder
