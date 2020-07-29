@@ -11,6 +11,7 @@ services:
     volumes:
       - "./:/srv/jekyll"
       - "cache:/usr/local/bundle/"
+      - "gems:/usr/gem/cache/"
     command: |
       sh -c "jekyll build"
 
@@ -26,3 +27,4 @@ services:
 
 volumes:
   cache:
+  gems:
