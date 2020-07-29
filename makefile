@@ -5,6 +5,9 @@ all: kill
 	docker-compose up -d
 	2>/dev/null xdg-open "http://localhost:4000"
 
+update:
+	docker-compose run builder bundle update
+
 clean: kill
 	docker-compose run builder jekyll clean
 

@@ -1,4 +1,4 @@
-[submodule "_sass/bootstrap"]
-	path = _sass/bootstrap
+[submodule "_assets/css/bootstrap"]
+	path = _assets/css/bootstrap
 	url = https://github.com/twbs/bootstrap.git
 	branch = v4-dev

@@ -10,8 +10,9 @@ services:
     image: jekyll/jekyll
     volumes:
       - "./:/srv/jekyll"
+      - "cache:/usr/local/bundle/"
     command: |
-      sh -c "bundle update && jekyll build"
+      sh -c "jekyll build"
 
   server:
     image: sebp/lighttpd
@@ -22,3 +23,6 @@ services:
       - "4000:80"
     depends_on:
       - builder
+
+volumes:
+  cache:

@@ -3,6 +3,7 @@ url: "http://peppelab.altervista.org"
 
 plugins:
   - jekyll-sitemap
+  - jekyll-assets
 
 markdown_ext: markdown,md,text,html
 markdown: kramdown
@@ -10,9 +11,17 @@ highlighter: rouge
 
 kramdown:
   math_engine: null
-
+  
 sass:
   style: full
+
+assets:
+  compression: true
+  plugins:
+    css:
+      autoprefixer: {}
+    img:
+      optim: {}
 
 exclude: [makefile,lftp.script]
 
