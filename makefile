@@ -12,7 +12,7 @@ clean: kill
 	docker-compose run builder jekyll clean
 
 kill:
-	docker-compose down -v
+	docker-compose down
 
 build: clean
 	docker-compose run -e JEKYLL_ENV=production builder
