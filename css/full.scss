@@ -1,3 +1,5 @@
+---
+---
 /*!
  * Part of this from:
  * 
@@ -91,4 +93,4 @@ h2, .h2, h3, .h3 {
   margin-top: 1em; /* this uses a relative unit on purpose */
 }
 
-@import "faster.scss" //do not allow full.css to override faster.css
+{% include faster.scss %}  //do not allow full.css to override faster.css

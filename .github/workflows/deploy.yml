@@ -1,0 +1,40 @@
+name: Deploy Jekyll Site via FTP
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: 💎 Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4' # Update to match your local ruby version (check with `ruby -v`)
+          bundler-cache: true # runs 'bundle install' and caches gems automatically
+
+      - name: 🔨 Build Site
+        run: |
+          bundle exec jekyll build --trace
+
+      - name: 📂 Sync with FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./_site/
+          server-dir: ./ 
+          exclude: |
+            a
+            a/**
+            .htaccess
+          dangerous-clean-slate: true # Deletes files on server that aren't in _site (mirroring)
