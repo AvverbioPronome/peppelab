@@ -19,7 +19,7 @@ jobs:
       - name: 💎 Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # Update to match your local ruby version (check with `ruby -v`)
+          ruby-version: '3.4' # Update to match your local ruby version (check with `ruby -v`)
           bundler-cache: true # runs 'bundle install' and caches gems automatically
 
       - name: 🔨 Build Site
