@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feature_autodeploy
   workflow_dispatch:
 
 jobs:
@@ -38,5 +37,4 @@ jobs:
             a
             a/**
             .htaccess
-          dry-run: true  
           dangerous-clean-slate: true # Deletes files on server that aren't in _site (mirroring)
