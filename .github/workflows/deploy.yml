@@ -24,7 +24,7 @@ jobs:
 
       - name: 🔨 Build Site
         run: |
-          bundle exec jekyll build
+          bundle exec jekyll build --trace
 
       - name: 📂 Sync with FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
