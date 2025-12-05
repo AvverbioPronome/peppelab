@@ -27,7 +27,7 @@ sass:
 #     img:
 #       optim: {}
 
-exclude: [makefile,lftp.script]
+exclude: [makefile,lftp.script,docker-compose.yml,devcontainer.json]
 
 defaults:
   -
