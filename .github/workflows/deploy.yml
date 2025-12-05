@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v6
+        with:
+          submodules: recursive
 
       - name: 💎 Setup Ruby
         uses: ruby/setup-ruby@v1
